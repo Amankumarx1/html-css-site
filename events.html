@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('eak_theme_vanilla');
+        if (t === 'light') {
+          document.documentElement.classList.add('light-theme');
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events & Notices | EAK International School</title>
+  <meta name="description" content="Stay informed with official circulars, academic notices, inter-school athletic championships, and cultural celebrations at EAK International School.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <!-- Fast Typography Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
+  <!-- Tailwind CSS v3 Standalone CDN & Shared Config -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script src="js/tailwind-config.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-preload">
+  <script>
+    (function() {
+      try {
+        if (document.documentElement.classList.contains('light-theme') || localStorage.getItem('eak_theme_vanilla') === 'light') {
+          document.body.classList.add('light-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="brand-logo" aria-label="EAK International School Home">
+          <div class="crest-badge">
+            <img src="assets/logo.svg" alt="EAK Crest" width="28" height="28">
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">EAK</span>
+            <span class="brand-sub">INTERNATIONAL SCHOOL</span>
+          </div>
+        </a>
+
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="academics.html" class="nav-link">Academics</a>
+          <a href="admissions.html" class="nav-link">Admissions</a>
+          <a href="facilities.html" class="nav-link">Facilities</a>
+          <a href="events.html" class="nav-link active">Events</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <button type="button" id="shortlist-launcher-btn" class="icon-btn" title="Admissions Shortlist">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+            <span class="badge-counter shortlist-count-badge" style="display: none;">0</span>
+          </button>
+          <button type="button" class="icon-btn theme-toggle-btn" title="Toggle Theme">
+            <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          </button>
+          <button type="button" class="icon-btn search-trigger-btn" title="Search Site (Ctrl + K)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+          <a href="admissions.html" class="btn btn-glass">Apply Now</a>
+          <button type="button" id="mobile-menu-btn" class="icon-btn menu-toggle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <div class="mobile-drawer-inner">
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Home</span>
+        </a>
+        <a href="about.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span>About School</span>
+        </a>
+        <a href="academics.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <span>Academic Programs</span>
+        </a>
+        <a href="admissions.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Admissions 2027–28</span>
+        </a>
+        <a href="facilities.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="22.01"/><line x1="15" y1="22" x2="15" y2="22.01"/><line x1="9" y1="18" x2="9" y2="18.01"/><line x1="15" y1="18" x2="15" y2="18.01"/></svg>
+          <span>Campus & Facilities</span>
+        </a>
+        <a href="events.html" class="mobile-nav-link active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>Notices & Events</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Contact Campus</span>
+        </a>
+        <button type="button" class="mobile-nav-link mobile-shortlist-launcher" aria-label="Open Admissions Shortlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+          <span>My Admissions Shortlist</span>
+          <span class="shortlist-count-badge mobile-badge">0</span>
+        </button>
+      </div>
+      <div class="mobile-drawer-footer">
+        <a href="admissions.html" class="btn btn-solid" style="width: 100%; text-align: center;">Apply for Admission 2027–28</a>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 11px; color: var(--text-secondary); font-family: var(--font-mono);">
+          <span>Tel: +91 11 4567 8900</span>
+          <span style="color: var(--accent-emerald);">Admissions Open</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" style="padding-top: calc(var(--nav-height) + 20px);">
+    <!-- Hero Banner -->
+    <section class="section" style="padding-top: 50px; padding-bottom: 50px;">
+      <div class="container">
+        <div style="font-size: 11px; font-family: var(--font-mono); color: var(--text-secondary); margin-bottom: 12px;">
+          <a href="index.html">Home</a> / <span style="color: var(--text-primary);">Events & Notices</span>
+        </div>
+        <h1 style="font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 800; margin-bottom: 14px;">
+          Events, Notices & Calendar
+        </h1>
+        <p style="font-size: 16px; color: var(--text-secondary); max-width: 760px; line-height: 1.6;">
+          Keep abreast of school circulars, academic assessments, inter-school tournaments, and community celebrations for the 2026–27 session.
+        </p>
+      </div>
+    </section>
+
+    <!-- Monthly Calendar Agenda -->
+    <section class="section">
+      <div class="container container-narrow" style="max-width: 760px; margin-left: auto; margin-right: auto;">
+        <div class="section-header" style="text-align: center; max-width: 620px; margin-left: auto; margin-right: auto; margin-bottom: 32px;">
+          <span class="section-eyebrow">ACADEMIC AGENDA</span>
+          <h2 class="section-title">October 2026 Monthly Schedule</h2>
+          <p class="section-desc">Key institutional milestones and scheduled school events.</p>
+        </div>
+
+        <div class="tool-box container-narrow" style="max-width: 760px; margin-left: auto; margin-right: auto;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3 style="font-size: 18px; font-weight: 800;">October 2026</h3>
+            <button type="button" class="btn btn-glass btn-sm" onclick="downloadIcsCalendar();">Download Calendar (.ics) <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-left: 4px;"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg></button>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; text-align: center; font-family: var(--font-mono); font-size: 11px; margin-bottom: 20px;">
+            <div style="color: var(--text-muted); font-weight: 700;">MON</div>
+            <div style="color: var(--text-muted); font-weight: 700;">TUE</div>
+            <div style="color: var(--text-muted); font-weight: 700;">WED</div>
+            <div style="color: var(--text-muted); font-weight: 700;">THU</div>
+            <div style="color: var(--text-muted); font-weight: 700;">FRI</div>
+            <div style="color: var(--text-muted); font-weight: 700;">SAT</div>
+            <div style="color: var(--text-muted); font-weight: 700;">SUN</div>
+
+            <!-- Calendar Days -->
+            <div style="padding: 10px; border-radius: 8px; opacity: 0.3;">28</div>
+            <div style="padding: 10px; border-radius: 8px; opacity: 0.3;">29</div>
+            <div style="padding: 10px; border-radius: 8px; opacity: 0.3;">30</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">1</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">2</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">3</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">4</div>
+
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">5</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">6</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">7</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">8</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">9</div>
+            <div class="calendar-event-day" style="padding: 10px; border-radius: 8px; background: var(--accent-emerald-bg); font-weight: 800; border: 1px solid var(--accent-emerald); cursor: pointer;" title="Click to view School Science Exhibition" data-target-event="event-card-10">10</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">11</div>
+
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">12</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">13</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">14</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">15</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">16</div>
+            <div class="calendar-event-day" style="padding: 10px; border-radius: 8px; background: var(--accent-sky-bg); font-weight: 800; border: 1px solid var(--accent-sky); cursor: pointer;" title="Click to view Swimming Championship" data-target-event="event-card-17">17</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">18</div>
+
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">19</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">20</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">21</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">22</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">23</div>
+            <div class="calendar-event-day" style="padding: 10px; border-radius: 8px; background: var(--accent-amber-bg); font-weight: 800; border: 1px solid var(--accent-amber); cursor: pointer;" title="Click to view Parent-Teacher Meeting (PTM)" data-target-event="event-card-24">24</div>
+            <div style="padding: 10px; border-radius: 8px; background: var(--glass-bg);">25</div>
+          </div>
+
+          <!-- Highlight Legend -->
+          <div style="display: flex; gap: 20px; font-size: 12px; color: var(--text-secondary); border-top: 1px solid var(--border-color); padding-top: 14px; flex-wrap: wrap;">
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent-emerald);"></span> Oct 10: Science Exhibition</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent-sky);"></span> Oct 17: Swimming Championship</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent-amber);"></span> Oct 24: Parent-Teacher Meeting (PTM)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notices Cards Grid -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">OFFICIAL CIRCULARS</span>
+          <h2 class="section-title">Latest Announcements & Notices</h2>
+          <p class="section-desc">Filter notices by category or reserve visitor entry passes for scheduled on-campus proceedings.</p>
+        </div>
+
+        <!-- Live Search & Category Filter Bar (Tailwind + Vanilla JS) -->
+        <div class="max-w-md mx-auto mb-6">
+          <div class="relative">
+            <input type="text" id="event-search-input" placeholder="Search notices, sports, exhibitions, circulars..." class="w-full px-4 py-2.5 pl-10 text-xs sm:text-sm rounded-full border border-slate-300 dark:border-white/10 bg-white/70 dark:bg-black/30 backdrop-blur-md text-slate-800 dark:text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all">
+            <svg class="absolute left-3.5 top-3 w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+        </div>
+
+        <div class="event-filter-bar">
+          <button type="button" class="event-filter-btn active" data-filter="all">All Items (3)</button>
+          <button type="button" class="event-filter-btn" data-filter="competition">Competitions (1)</button>
+          <button type="button" class="event-filter-btn" data-filter="athletics">Athletics (1)</button>
+          <button type="button" class="event-filter-btn" data-filter="circular">Circulars (1)</button>
+        </div>
+
+        <div class="card-grid">
+          <div class="glass-card event-item-card" id="event-card-10" data-category="competition">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-emerald); font-weight: 700;">OCT 10, 2026</span>
+                <span style="font-size: 10px; background: var(--glass-bg); padding: 2px 8px; border-radius: 4px; font-weight: 600;">COMPETITION</span>
+              </div>
+              <h3 class="card-title">Annual School Science & STEM Exhibition</h3>
+              <p class="card-text">Students across Grades 6–12 exhibit science models, robotics projects, and creative experiments.</p>
+              <div style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 8px;">
+                Venue: Turing Science Lab • 09:00 AM – 04:00 PM
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap;">
+              <button type="button" class="btn btn-solid btn-sm" onclick="openPassModal('Annual School Science & STEM Exhibition', 'Saturday, Oct 10, 2026', '09:00 AM – 04:00 PM', 'Turing Science & Robotics Lab');">Reserve Pass →</button>
+              <button type="button" class="btn btn-outline btn-sm" onclick="addShortlistItem('Event: Science Exhibition (Oct 10)', 'Event');">Bookmark <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-left: 2px;"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg></button>
+            </div>
+          </div>
+
+          <div class="glass-card event-item-card" id="event-card-17" data-category="athletics">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-sky); font-weight: 700;">OCT 17, 2026</span>
+                <span style="font-size: 10px; background: var(--glass-bg); padding: 2px 8px; border-radius: 4px; font-weight: 600;">ATHLETICS</span>
+              </div>
+              <h3 class="card-title">Inter-House Annual Swimming Championship</h3>
+              <p class="card-text">Annual school swimming gala featuring freestyle, backstroke, and medley relays across all 4 houses.</p>
+              <div style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 8px;">
+                Venue: School Swimming Pool • 08:30 AM – 02:00 PM
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap;">
+              <button type="button" class="btn btn-solid btn-sm" onclick="openPassModal('Inter-House Annual Swimming Championship', 'Saturday, Oct 17, 2026', '08:30 AM – 02:00 PM', 'School Swimming Pool Complex');">Reserve Pass →</button>
+              <button type="button" class="btn btn-outline btn-sm" onclick="addShortlistItem('Event: Swimming Championship (Oct 17)', 'Event');">Bookmark <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-left: 2px;"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg></button>
+            </div>
+          </div>
+
+          <div class="glass-card event-item-card" id="event-card-24" data-category="circular">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-amber); font-weight: 700;">OCT 24, 2026</span>
+                <span style="font-size: 10px; background: var(--glass-bg); padding: 2px 8px; border-radius: 4px; font-weight: 600;">CIRCULAR</span>
+              </div>
+              <h3 class="card-title">Term I Parent-Teacher Meeting (PTM)</h3>
+              <p class="card-text">Individual scheduled conferences to discuss academic progress, term report cards, and student growth.</p>
+              <div style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 8px;">
+                Venue: School Classrooms & Hall • 09:00 AM – 03:00 PM
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap;">
+              <button type="button" class="btn btn-solid btn-sm" onclick="openPassModal('Term I Parent-Teacher Meeting (PTM)', 'Saturday, Oct 24, 2026', '09:00 AM – 03:00 PM', 'School Classrooms & Hall');">Reserve Pass →</button>
+              <button type="button" class="btn btn-outline btn-sm" onclick="addShortlistItem('Notice: Parent-Teacher Meeting (Oct 24)', 'Notice');">Bookmark <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-left: 2px;"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg></button>
+            </div>
+          </div>
+
+          <!-- Extended Cards for Load More -->
+          <div class="glass-card event-item-card extra-notice" id="event-card-extra-1" data-category="circular" style="display: none;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-emerald); font-weight: 700;">OCT 28, 2026</span>
+                <span style="font-size: 10px; background: var(--glass-bg); padding: 2px 8px; border-radius: 4px; font-weight: 600;">CIRCULAR</span>
+              </div>
+              <h3 class="card-title">Winter Uniform Transition Protocol</h3>
+              <p class="card-text">Guidelines regarding mandatory winter blazers, sweaters, and tie specifications for students across Grades 1–12.</p>
+              <div style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 8px;">
+                Circulated to all parents via school portal
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px; margin-top: 16px;">
+              <a href="assets/logo.svg" download="winter-uniform-guidelines.txt" class="btn btn-glass btn-sm">Download Circular (.txt) ↓</a>
+            </div>
+          </div>
+
+          <div class="glass-card event-item-card extra-notice" id="event-card-extra-2" data-category="competition" style="display: none;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-sky); font-weight: 700;">NOV 04, 2026</span>
+                <span style="font-size: 10px; background: var(--glass-bg); padding: 2px 8px; border-radius: 4px; font-weight: 600;">COMPETITION</span>
+              </div>
+              <h3 class="card-title">Inter-School Literary & Debating Fest</h3>
+              <p class="card-text">Annual parliamentary debates, slam poetry, and creative writing contests hosting 28 schools across the region.</p>
+              <div style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 8px;">
+                Venue: Alexander Library Auditorium
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px; margin-top: 16px;">
+              <button type="button" class="btn btn-solid btn-sm" onclick="openPassModal('Inter-School Literary Fest', 'Wednesday, Nov 04, 2026', '09:30 AM – 04:30 PM', 'Alexander Library Auditorium');">Reserve Pass →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Load More Button Simulation -->
+        <div style="text-align: center; margin-top: 36px;">
+          <button type="button" id="load-more-notices-btn" class="btn btn-outline" onclick="const extras = document.querySelectorAll('.extra-notice'); extras.forEach(el => el.style.display = el.style.display === 'none' ? 'flex' : 'none'); this.textContent = extras[0].style.display === 'none' ? 'Load Archived Notices ↓' : 'Show Fewer Notices ↑';">
+            Load Archived Notices ↓
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Holiday Notices & School Closures (Brief Requirement) -->
+    <section class="section">
+      <div class="container container-narrow" style="max-width: 760px; margin-left: auto; margin-right: auto;">
+        <div class="section-header" style="text-align: center; max-width: 620px; margin-left: auto; margin-right: auto; margin-bottom: 32px;">
+          <span class="section-eyebrow">ACADEMIC BREAKS</span>
+          <h2 class="section-title">Official Holiday List & Term Breaks (2026–27)</h2>
+          <p class="section-desc">Approved institutional calendar for gazetted holidays and scheduled term vacations.</p>
+        </div>
+
+        <div style="overflow-x: auto; max-width: 760px; margin-left: auto; margin-right: auto;" class="container-narrow">
+          <table class="dates-table">
+            <thead>
+              <tr>
+                <th>Occasion / Observance</th>
+                <th>Dates & Duration</th>
+                <th>School Operations Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Dussehra & Autumn Break</strong></td>
+                <td>October 19 – 23, 2026 (5 Days)</td>
+                <td><span style="color: var(--accent-amber); font-weight: 700;">Campus Closed for Classes</span></td>
+              </tr>
+              <tr>
+                <td><strong>Diwali & Festive Holidays</strong></td>
+                <td>November 09 – 13, 2026 (5 Days)</td>
+                <td><span style="color: var(--accent-amber); font-weight: 700;">Full Campus Holiday</span></td>
+              </tr>
+              <tr>
+                <td><strong>Guru Nanak Jayanti</strong></td>
+                <td>November 24, 2026 (1 Day)</td>
+                <td><span style="color: var(--accent-amber); font-weight: 700;">Gazetted Holiday</span></td>
+              </tr>
+              <tr>
+                <td><strong>Winter Vacation (Grades Nursery–VIII)</strong></td>
+                <td>Dec 25, 2026 – Jan 06, 2027</td>
+                <td><span style="color: var(--accent-sky); font-weight: 700;">Winter Break (Office Open)</span></td>
+              </tr>
+              <tr>
+                <td><strong>Republic Day Observance</strong></td>
+                <td>January 26, 2027</td>
+                <td><span style="color: var(--accent-emerald); font-weight: 700;">Flag Hoisting Ceremony (08:30 AM)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Examination Circulars & Assessments (Brief Requirement) -->
+    <section class="section">
+      <div class="container container-narrow" style="max-width: 760px; margin-left: auto; margin-right: auto;">
+        <div class="section-header" style="text-align: center; max-width: 620px; margin-left: auto; margin-right: auto; margin-bottom: 32px;">
+          <span class="section-eyebrow">ASSESSMENT RELEASES</span>
+          <h2 class="section-title">Examination Circulars & Downloads</h2>
+          <p class="section-desc">Downloadable circular guidelines for middle and senior secondary term assessments.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div class="glass-card" style="padding: 20px; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+            <div>
+              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-emerald); font-weight: 700;">CIRCULAR #CBSE-X-2027</div>
+              <h4 style="font-size: 15px; font-weight: 800; margin: 4px 0;">Class X & XII Board Practical Examination Guidelines</h4>
+              <p style="font-size: 12px; color: var(--text-secondary); margin: 0;">Internal assessment rubrics, project portfolio submission deadlines, and lab viva dates.</p>
+            </div>
+            <a href="assets/logo.svg" download="cbse-board-practicals-2027.txt" class="btn btn-solid btn-sm">Download PDF / Circular ↓</a>
+          </div>
+
+          <div class="glass-card" style="padding: 20px; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+            <div>
+              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-sky); font-weight: 700;">CIRCULAR #CIE-IGCSE-2026</div>
+              <h4 style="font-size: 15px; font-weight: 800; margin: 4px 0;">Cambridge November Series Timetable & Hall Passes</h4>
+              <p style="font-size: 12px; color: var(--text-secondary); margin: 0;">Official Cambridge Assessment examination room allocations and candidate instructions.</p>
+            </div>
+            <a href="assets/logo.svg" download="cie-igcse-timetable.txt" class="btn btn-solid btn-sm">Download Schedule ↓</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding: 0;">
+        <div>© 2026 EAK International School. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating AI Assistant Launcher -->
+  <div class="floating-pill">
+    <button type="button" id="ai-launcher-btn" class="btn btn-solid" style="gap: 10px;">
+      <span class="pulse-dot"></span>
+      <span>Ask EAK AI</span>
+    </button>
+  </div>
+
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Drawers & Modals -->
+  <div id="ai-drawer" class="side-drawer">
+    <div class="drawer-header">
+      <h3 style="font-size: 16px; font-weight: 800;">EAK Campus Concierge</h3>
+      <button type="button" id="ai-close-btn" class="drawer-close-btn" aria-label="Close Campus Concierge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="ai-chat-messages" class="drawer-body"></div>
+    <div class="drawer-footer">
+      <form id="ai-chat-form" style="display: flex; gap: 8px;">
+        <input type="text" id="ai-chat-input" class="form-input" placeholder="Ask about events or term dates..." style="flex: 1;">
+        <button type="submit" class="btn btn-solid">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="shortlist-drawer" class="side-drawer">
+    <div class="drawer-header">
+      <h3 style="font-size: 16px; font-weight: 800;">My Admissions Shortlist</h3>
+      <button type="button" id="shortlist-close-btn" class="drawer-close-btn" aria-label="Close Admissions Shortlist">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="shortlist-items-container" class="drawer-body"></div>
+    <div class="drawer-footer">
+      <button type="button" id="shortlist-print-btn" class="btn btn-outline" style="width: 100%;">Print Shortlist</button>
+    </div>
+  </div>
+
+  <div id="search-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <h3 style="font-size: 16px; font-weight: 800;">Search Site (Ctrl + K)</h3>
+        <button type="button" id="search-close-btn" class="drawer-close-btn" aria-label="Close Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <input type="text" id="search-input" class="form-input" placeholder="Type to search...">
+      <div id="search-results" style="margin-top: 14px;"></div>
+    </div>
+  </div>
+
+  <!-- Digital Visitor Entry Pass Modal -->
+  <div id="pass-modal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 520px; padding: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-emerald); font-weight: 700;">OFFICIAL VISITOR CREDENTIAL</span>
+        <button type="button" class="modal-close-btn drawer-close-btn" aria-label="Close Pass Modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <!-- Live Interactive Pass Card -->
+      <div class="event-pass" id="live-pass-card" style="margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+          <div>
+            <div style="font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.1em; color: var(--text-muted);">EAK INTERNATIONAL SCHOOL</div>
+            <h4 id="pass-event-title" style="font-size: 16px; font-weight: 800; margin-top: 4px;">Event Access Pass</h4>
+          </div>
+          <span style="font-size: 10px; background: var(--accent-emerald-bg); color: var(--accent-emerald); border: 1px solid var(--accent-emerald); padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono); font-weight: 700;">GUEST PASS</span>
+        </div>
+
+        <div class="responsive-two-col-tight" style="margin-bottom: 16px; font-size: 12px;">
+          <div>
+            <div style="font-size: 10px; color: var(--text-muted); font-family: var(--font-mono);">ATTENDEE</div>
+            <div id="pass-attendee-name" style="font-weight: 700; color: var(--text-primary); margin-top: 2px;">Guest Attendee</div>
+          </div>
+          <div>
+            <div style="font-size: 10px; color: var(--text-muted); font-family: var(--font-mono);">DATE & TIME</div>
+            <div id="pass-event-date" style="font-weight: 700; color: var(--text-primary); margin-top: 2px;">Oct 10, 2026</div>
+          </div>
+          <div>
+            <div style="font-size: 10px; color: var(--text-muted); font-family: var(--font-mono);">CAMPUS LOCATION</div>
+            <div id="pass-event-venue" style="font-weight: 700; color: var(--text-primary); margin-top: 2px;">Main Campus</div>
+          </div>
+          <div>
+            <div style="font-size: 10px; color: var(--text-muted); font-family: var(--font-mono);">PASS SERIAL</div>
+            <div id="pass-serial-id" style="font-weight: 700; font-family: var(--font-mono); color: var(--accent-sky); margin-top: 2px;">EAK-PASS-8842</div>
+          </div>
+        </div>
+
+        <div class="pass-barcode">
+          <div class="pass-bar" style="width: 3px;"></div>
+          <div class="pass-bar" style="width: 1px; margin-left: 2px;"></div>
+          <div class="pass-bar" style="width: 4px; margin-left: 4px;"></div>
+          <div class="pass-bar" style="width: 2px; margin-left: 2px;"></div>
+          <div class="pass-bar" style="width: 5px; margin-left: 3px;"></div>
+          <div class="pass-bar" style="width: 2px; margin-left: 2px;"></div>
+          <div class="pass-bar" style="width: 3px; margin-left: 4px;"></div>
+          <div class="pass-bar" style="width: 1px; margin-left: 2px;"></div>
+          <div class="pass-bar" style="width: 4px; margin-left: 3px;"></div>
+          <div class="pass-bar" style="width: 2px; margin-left: 2px;"></div>
+          <div class="pass-bar" style="width: 6px; margin-left: 4px;"></div>
+          <div class="pass-bar" style="width: 3px; margin-left: 2px;"></div>
+          <div class="pass-bar" style="width: 2px; margin-left: 3px;"></div>
+          <div class="pass-bar" style="width: 4px; margin-left: 2px;"></div>
+        </div>
+      </div>
+
+      <!-- Attendee Input Customization -->
+      <div style="margin-bottom: 16px;">
+        <label class="form-label" for="pass-input-name" style="font-size: 12px; margin-bottom: 6px; display: block;">Your Full Name</label>
+        <input type="text" id="pass-input-name" class="form-input" placeholder="e.g. Vikramaditya Singhania" value="Guest Attendee">
+      </div>
+
+      <div style="display: flex; gap: 10px;">
+        <button type="button" id="pass-download-btn" class="btn btn-solid" style="flex: 1;">Download Pass (.txt)</button>
+        <button type="button" id="pass-print-btn" class="btn btn-glass" style="flex: 1;">Print Pass</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

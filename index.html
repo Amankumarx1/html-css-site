@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('eak_theme_vanilla');
+        if (t === 'light') {
+          document.documentElement.classList.add('light-theme');
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EAK International School | Nurturing Curious Minds for a Brighter Tomorrow</title>
+  <meta name="description" content="EAK International School is a modern K-12 learning environment focused on academic excellence, character, creativity, and holistic development.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <!-- Fast Typography Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
+  <!-- Tailwind CSS v3 Standalone CDN & Shared Config -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script src="js/tailwind-config.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-preload">
+  <script>
+    (function() {
+      try {
+        if (document.documentElement.classList.contains('light-theme') || localStorage.getItem('eak_theme_vanilla') === 'light') {
+          document.body.classList.add('light-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <!-- Main Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <!-- Brand Crest -->
+        <a href="index.html" class="brand-logo" aria-label="EAK International School Home">
+          <div class="crest-badge">
+            <img src="assets/logo.svg" alt="EAK Crest" width="28" height="28">
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">EAK</span>
+            <span class="brand-sub">INTERNATIONAL SCHOOL</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="academics.html" class="nav-link">Academics</a>
+          <a href="admissions.html" class="nav-link">Admissions</a>
+          <a href="facilities.html" class="nav-link">Facilities</a>
+          <a href="events.html" class="nav-link">Events</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <!-- Action HUD -->
+        <div class="nav-actions">
+          <!-- Shortlist Trigger -->
+          <button type="button" id="shortlist-launcher-btn" class="icon-btn" title="Admissions Shortlist" aria-label="Open Admissions Shortlist">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+            <span class="badge-counter shortlist-count-badge" style="display: none;">0</span>
+          </button>
+
+          <!-- Theme Toggle (Dark / Light) -->
+          <button type="button" class="icon-btn theme-toggle-btn" title="Toggle Obsidian / Swiss Theme" aria-label="Toggle Theme">
+            <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          </button>
+
+          <!-- Search Trigger (Ctrl + K) -->
+          <button type="button" class="icon-btn search-trigger-btn" title="Search Site (Ctrl + K)" aria-label="Search Site">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+
+          <a href="admissions.html" class="btn btn-glass">Apply Now</a>
+
+          <!-- Mobile Toggle -->
+          <button type="button" id="mobile-menu-btn" class="icon-btn menu-toggle" aria-label="Toggle Menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <div class="mobile-drawer-inner">
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Home</span>
+        </a>
+        <a href="about.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span>About School</span>
+        </a>
+        <a href="academics.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <span>Academic Programs</span>
+        </a>
+        <a href="admissions.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Admissions 2027–28</span>
+        </a>
+        <a href="facilities.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="22.01"/><line x1="15" y1="22" x2="15" y2="22.01"/><line x1="9" y1="18" x2="9" y2="18.01"/><line x1="15" y1="18" x2="15" y2="18.01"/></svg>
+          <span>Campus & Facilities</span>
+        </a>
+        <a href="events.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>Notices & Events</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Contact Campus</span>
+        </a>
+        <button type="button" class="mobile-nav-link mobile-shortlist-launcher" aria-label="Open Admissions Shortlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+          <span>My Admissions Shortlist</span>
+          <span class="shortlist-count-badge mobile-badge">0</span>
+        </button>
+      </div>
+      <div class="mobile-drawer-footer">
+        <a href="admissions.html" class="btn btn-solid" style="width: 100%; text-align: center;">Apply for Admission 2027–28</a>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 11px; color: var(--text-secondary); font-family: var(--font-mono);">
+          <span>Tel: +91 11 4567 8900</span>
+          <span style="color: var(--accent-emerald);">Admissions Open</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    <!-- 100% Screen Fitted Hero -->
+    <section class="hero-section">
+      <!-- Classroom Video Background for Hero Section -->
+      <div class="hero-backdrop" aria-hidden="true">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/classroom-bg-poster.jpg">
+          <source src="assets/classroom-bg.mp4" type="video/mp4">
+          <source src="assets/classroom-bg.webm" type="video/webm">
+          <img src="assets/classroom-bg-poster.jpg" alt="Modern Classroom at EAK International School" class="hero-img">
+        </video>
+        <div class="hero-gradient"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="eyebrow-pill hero-enter hero-enter-1">
+          <span class="pulse-dot"></span>
+          <span>ESTABLISHED 2012 • CBSE & CAMBRIDGE ACCREDITED</span>
+        </div>
+
+        <h1 class="hero-headline hero-enter hero-enter-2">
+          Nurturing Curious Minds for a Brighter Tomorrow
+        </h1>
+
+        <p class="hero-subtitle hero-enter hero-enter-3">
+          An internationally benchmarked learning ecosystem where intellectual inquiry meets athletic vigor and creative poise. Inspiring tomorrow’s global thinkers and ethical leaders.
+        </p>
+
+        <div class="hero-ctas hero-enter hero-enter-4">
+          <a href="admissions.html" class="btn btn-solid">Apply Now →</a>
+          <a href="facilities.html#virtual-tour" class="btn btn-glass">360° Campus Tour</a>
+        </div>
+      </div>
+
+      <!-- Live Animated Metric Strip -->
+      <div class="container" style="position: relative; z-index: 10; width: 100%; margin-top: auto; padding-bottom: 24px;">
+        <div class="metrics-strip hero-enter hero-enter-5">
+          <div class="metric-card">
+            <div class="metric-num" data-counter-target="15" data-counter-suffix="+">15+</div>
+            <div class="metric-label">Years of School Excellence</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-num" data-counter-target="2400" data-counter-suffix="+">2,400+</div>
+            <div class="metric-label">Enrolled Students</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-num" data-counter-target="100" data-counter-suffix="%">100%</div>
+            <div class="metric-label">Board Exam Pass Rate</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-num" data-counter-target="100" data-counter-suffix="%">100%</div>
+            <div class="metric-label">Smart Classrooms & Labs</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progressive Frosted Gaussian Blur Transition (Liquid Glass Dissolve) -->
+      <div class="hero-blur-bottom" aria-hidden="true">
+        <div class="hero-blur-deep"></div>
+      </div>
+    </section>
+
+    <!-- Why Choose EAK -->
+    <section class="section" id="about-pillars">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">DISTINCTIVE PILLARS</span>
+          <h2 class="section-title">Why Families Choose EAK International</h2>
+          <p class="section-desc">Our integrated educational methodology combines scientific rigor, artistic exploration, character formation, and athletic resilience.</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="glass-card">
+            <div>
+              <div class="card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="m14 22 3-3-3-3"/><path d="M9 14 15 8"/><path d="M12 5 9 8l4 4 3-3Z"/></svg>
+              </div>
+              <h3 class="card-title">STEM & AI Innovation Hubs</h3>
+              <p class="card-text">Hands-on robotics, machine intelligence, and experiential scientific discovery from Primary through Senior Secondary.</p>
+            </div>
+            <a href="facilities.html" style="font-size: 12px; font-weight: 700; color: var(--accent-sky);">Explore Labs →</a>
+          </div>
+
+          <div class="glass-card">
+            <div>
+              <div class="card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              </div>
+              <h3 class="card-title">Dual Cambridge & CBSE Framework</h3>
+              <p class="card-text">Seamless progression from Foundational inquiry to internationally recognized Senior Secondary board certifications.</p>
+            </div>
+            <a href="academics.html" style="font-size: 12px; font-weight: 700; color: var(--accent-emerald);">View Curricula →</a>
+          </div>
+
+          <div class="glass-card">
+            <div>
+              <div class="card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+              </div>
+              <h3 class="card-title">Olympic-Grade Athletics</h3>
+              <p class="card-text">50m temperature-controlled pool, FIFA-standard football turf, indoor basketball courts, and master sports coaching.</p>
+            </div>
+            <a href="facilities.html" style="font-size: 12px; font-weight: 700; color: var(--accent-amber);">View Sports →</a>
+          </div>
+
+          <div class="glass-card">
+            <div>
+              <div class="card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 class="card-title">1:12 Faculty Mentorship</h3>
+              <p class="card-text">Close-knit student cohort sizes ensuring personalized academic attention, mental wellbeing, and continuous feedback.</p>
+            </div>
+            <a href="about.html" style="font-size: 12px; font-weight: 700; color: var(--accent-emerald);">Meet Faculty →</a>
+          </div>
+
+          <div class="glass-card">
+            <div>
+              <div class="card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"/><circle cx="17" cy="7" r="5"/></svg>
+              </div>
+              <h3 class="card-title">Creative & Performing Arts</h3>
+              <p class="card-text">Sunken 1,200-seat amphitheatre, acoustic music studios, ceramic workshops, and annual stage theatre productions.</p>
+            </div>
+            <a href="facilities.html" style="font-size: 12px; font-weight: 700; color: #EC4899;">Explore Arts →</a>
+          </div>
+
+          <div class="glass-card">
+            <div>
+              <div class="card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 class="card-title">Safe, Biophilic Campus</h3>
+              <p class="card-text">Zero-emission smart transit fleet, hospital-grade indoor air filtration, 24/7 CCTV surveillance, and dedicated nursing staff.</p>
+            </div>
+            <a href="contact.html" style="font-size: 12px; font-weight: 700; color: var(--accent-sky);">Campus Safety →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About the School (Brief Requirement: School intro & "Read More" CTA) -->
+    <section class="section">
+      <div class="container">
+        <div class="responsive-two-col items-center">
+          <div>
+            <span class="section-eyebrow">ABOUT THE SCHOOL</span>
+            <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Nurturing Intellectual Fearlessness & Ethical Character Since 2012</h2>
+            <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px;">
+              EAK International School is an internationally benchmarked K–12 institution dedicated to providing holistic education that balances scientific inquiry, artistic expression, and athletic stamina.
+            </p>
+            <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px;">
+              Founded with the belief that every child possesses unique potential, our modern campus provides smart classrooms, specialized science laboratories, and experienced educators who guide learners to become responsible global citizens.
+            </p>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="about.html" class="btn btn-solid">Read Our Full Story →</a>
+              <a href="about.html#leadership" class="btn btn-glass">Leadership & Vision</a>
+            </div>
+          </div>
+          <div style="position: relative;">
+            <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--glass-shadow);">
+              <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop" alt="Students in Classroom Collaborative Learning at EAK International School" style="width: 100%; height: auto; display: block;" loading="lazy" decoding="async">
+            </div>
+            <div class="duo-accreditation-badge" style="position: absolute; bottom: -20px; right: 0; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 14px 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); max-width: 260px;">
+              <div style="font-size: 11px; font-family: var(--font-mono); color: var(--accent-emerald); font-weight: 700;">DUAL ACCREDITATION</div>
+              <div style="font-size: 13px; font-weight: 700; margin-top: 4px; color: var(--text-primary);">CBSE & Cambridge Assessment International Education</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Academic Excellence (Brief Requirement: Primary, Middle, Secondary, Senior Secondary) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">ACADEMIC EXCELLENCE</span>
+          <h2 class="section-title">The K–12 Educational Continuum</h2>
+          <p class="section-desc">A structured learning pathway designed to guide students from early childhood exploration to board examinations and higher education readiness.</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="stage-card">
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-emerald); font-weight: 700;">STAGE 01 • AGES 3–6</span>
+              <h3 style="font-size: 18px; font-weight: 800; margin: 8px 0 12px;">Foundational Stage</h3>
+              <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                Play-based inquiry, tactile sensorial discovery, bilingual phonics, and foundational number concepts that ignite a lifelong passion for learning.
+              </p>
+              <div style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono);">Nursery • LKG • UKG</div>
+            </div>
+            <a href="academics.html" style="font-size: 12px; font-weight: 700; color: var(--accent-emerald); margin-top: 20px;">Explore Stage →</a>
+          </div>
+
+          <div class="stage-card">
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-sky); font-weight: 700;">STAGE 02 • GRADES 1–5</span>
+              <h3 style="font-size: 18px; font-weight: 800; margin: 8px 0 12px;">Primary Stage</h3>
+              <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                Conceptual mathematics, environmental sciences, language fluency, introductory digital coding, visual arts, and daily physical education.
+              </p>
+              <div style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono);">Cambridge Primary & CBSE Core</div>
+            </div>
+            <a href="academics.html" style="font-size: 12px; font-weight: 700; color: var(--accent-sky); margin-top: 20px;">Explore Stage →</a>
+          </div>
+
+          <div class="stage-card">
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-amber); font-weight: 700;">STAGE 03 • GRADES 6–8</span>
+              <h3 style="font-size: 18px; font-weight: 800; margin: 8px 0 12px;">Middle School</h3>
+              <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                Specialized laboratory practicums in physics, chemistry and biology, algebraic problem-solving, world geography, and Python robotics.
+              </p>
+              <div style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono);">Experiential Inquiry Curriculum</div>
+            </div>
+            <a href="academics.html" style="font-size: 12px; font-weight: 700; color: var(--accent-amber); margin-top: 20px;">Explore Stage →</a>
+          </div>
+
+          <div class="stage-card">
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: #A855F7; font-weight: 700;">STAGE 04 • GRADES 9–12</span>
+              <h3 style="font-size: 18px; font-weight: 800; margin: 8px 0 12px;">Secondary & Senior Secondary</h3>
+              <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                Rigorous CBSE & Cambridge board examination mastery with specialized senior streams (Science PCM, Science PCB, Commerce, and Humanities).
+              </p>
+              <div style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono);">Board Exams & Higher Ed Guidance</div>
+            </div>
+            <a href="academics.html#streams" style="font-size: 12px; font-weight: 700; color: #A855F7; margin-top: 20px;">Explore Streams →</a>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 36px;">
+          <a href="academics.html" class="btn btn-outline">View Detailed Curriculum & Subject Matrices →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Campus Life Spotlight (Interactive Switcher) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">CAMPUS IMMERSION</span>
+          <h2 class="section-title">Life & Spaces at EAK International</h2>
+          <p class="section-desc">Explore state-of-the-art learning sanctuaries designed to nurture intellectual curiosity, athletic endurance, and artistic performance.</p>
+        </div>
+
+        <div class="life-tabs-nav">
+          <button type="button" class="life-tab-btn active" data-tab="tab-stem">Turing AI & Robotics Lab</button>
+          <button type="button" class="life-tab-btn" data-tab="tab-sports">Olympic Aquatics Complex</button>
+          <button type="button" class="life-tab-btn" data-tab="tab-library">Alexander Research Library</button>
+          <button type="button" class="life-tab-btn" data-tab="tab-arts">Amphitheatre & Performing Arts</button>
+        </div>
+
+        <!-- Panel 1: Turing Lab -->
+        <div class="life-panel active" id="tab-stem">
+          <div class="life-panel-img">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200&auto=format&fit=crop" alt="Turing Advanced Robotics and AI Lab at EAK School" loading="lazy" decoding="async">
+          </div>
+          <div>
+            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-sky); font-weight: 700;">ENGINEERING SUITE</span>
+            <h3 style="font-size: 24px; font-weight: 800; margin: 8px 0 14px;">Turing Advanced Prototyping & AI Hub</h3>
+            <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px;">
+              Equipped with 30 modern computer workstations, 3D printers, and school robotics kits. Students learn programming, science modeling, and robotics under experienced mentor teachers.
+            </p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px;">
+              <span class="eligibility-badge">Computer Lab Stations</span>
+              <span class="eligibility-badge">Robotics Competition Kits</span>
+              <span class="eligibility-badge">3D Printing Lab</span>
+            </div>
+            <a href="facilities.html#virtual-tour" class="btn btn-solid btn-sm">Launch 360° Panorama Tour →</a>
+          </div>
+        </div>
+
+        <!-- Panel 2: Aquatics -->
+        <div class="life-panel" id="tab-sports">
+          <div class="life-panel-img">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Olympic Aquatics Complex at EAK School" loading="lazy" decoding="async">
+          </div>
+          <div>
+            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-emerald); font-weight: 700;">ATHLETIC EXCELLENCE</span>
+            <h3 style="font-size: 24px; font-weight: 800; margin: 8px 0 14px;">All-Weather Semi-Olympic Swimming Pool</h3>
+            <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px;">
+              An all-weather heated swimming pool maintained year-round at 27°C with modern filtration and dedicated swim coaches. Prepares students for inter-school swimming meets and athletic fitness.
+            </p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px;">
+              <span class="eligibility-badge">8 Swimming Lanes</span>
+              <span class="eligibility-badge">Heated 27°C Pool</span>
+              <span class="eligibility-badge">Dedicated Swim Coaches</span>
+            </div>
+            <a href="facilities.html" class="btn btn-solid btn-sm">Explore Sports Facilities →</a>
+          </div>
+        </div>
+
+        <!-- Panel 3: Library -->
+        <div class="life-panel" id="tab-library">
+          <div class="life-panel-img">
+            <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1200&auto=format&fit=crop" alt="Alexander Central Research Library at EAK School" loading="lazy" decoding="async">
+          </div>
+          <div>
+            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-amber); font-weight: 700;">KNOWLEDGE SANCTUARY</span>
+            <h3 style="font-size: 24px; font-weight: 800; margin: 8px 0 14px;">Alexander Central School Library</h3>
+            <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px;">
+              Housing over 42,000 curated books, children's literature, and digital reference terminals. Silent reading corners and study zones provide an inspiring environment for student reading clubs and board exam prep.
+            </p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px;">
+              <span class="eligibility-badge">42,000+ Print Books</span>
+              <span class="eligibility-badge">Digital Reference Terminals</span>
+              <span class="eligibility-badge">Quiet Reading Pods</span>
+            </div>
+            <a href="facilities.html" class="btn btn-solid btn-sm">View Campus Resources →</a>
+          </div>
+        </div>
+
+        <!-- Panel 4: Amphitheatre -->
+        <div class="life-panel" id="tab-arts">
+          <div class="life-panel-img">
+            <img src="https://images.unsplash.com/photo-1514306191717-452ec28c7814?q=80&w=1200&auto=format&fit=crop" alt="Performing Arts Amphitheatre at EAK School" loading="lazy" decoding="async">
+          </div>
+          <div>
+            <span style="font-family: var(--font-mono); font-size: 11px; color: #EC4899; font-weight: 700;">CREATIVE EXPRESSION</span>
+            <h3 style="font-size: 24px; font-weight: 800; margin: 8px 0 14px;">1,200-Seat Sunken Acoustic Amphitheatre</h3>
+            <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px;">
+              A sunken open-air amphitheatre with natural acoustics, stage lighting, and student green rooms. Hosts annual day concerts, inter-house debates, and school drama productions.
+            </p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px;">
+              <span class="eligibility-badge">1,200 Seating Capacity</span>
+              <span class="eligibility-badge">Natural Acoustic Shell</span>
+              <span class="eligibility-badge">Stage DMX Rigging</span>
+            </div>
+            <a href="events.html" class="btn btn-solid btn-sm">View Upcoming Performances →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements & Awards (Brief Requirement: Academic & sports achievements, competitions, and awards) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">HONORS & RECOGNITION</span>
+          <h2 class="section-title">Institutional Accolades & Student Trophies</h2>
+          <p class="section-desc">Celebrating outstanding student benchmarks across board examinations, national innovation contests, and inter-school championships.</p>
+        </div>
+
+        <div class="achievement-grid">
+          <div class="achievement-card">
+            <div style="font-size: 28px; font-weight: 800; color: var(--accent-emerald); font-family: var(--font-heading); margin-bottom: 6px;">100%</div>
+            <h4 style="font-size: 16px; font-weight: 800; margin-bottom: 8px;">Board Examination Pass Rate</h4>
+            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;">
+              94.2% cohort distinction average across CBSE Class X/XII and Cambridge IGCSE with top school rankings nationwide.
+            </p>
+            <div style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 12px;">Class of 2026 Results</div>
+          </div>
+
+          <div class="achievement-card">
+            <div style="font-size: 28px; font-weight: 800; color: var(--accent-sky); font-family: var(--font-heading); margin-bottom: 6px;">1st Place</div>
+            <h4 style="font-size: 16px; font-weight: 800; margin-bottom: 8px;">National STEM & Robotics Cup</h4>
+            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;">
+              Turing Lab student innovators secured the championship gold among 120 schools for autonomous maze navigation.
+            </p>
+            <div style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 12px;">National Science Congress 2026</div>
+          </div>
+
+          <div class="achievement-card">
+            <div style="font-size: 28px; font-weight: 800; color: var(--accent-amber); font-family: var(--font-heading); margin-bottom: 6px;">14 Golds</div>
+            <h4 style="font-size: 16px; font-weight: 800; margin-bottom: 8px;">State Aquatics & Athletics Meet</h4>
+            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;">
+              School swim and track teams clinched 14 individual gold medals and the Overall Champion Trophy in Delhi NCR.
+            </p>
+            <div style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 12px;">Inter-School Sports 2026</div>
+          </div>
+
+          <div class="achievement-card">
+            <div style="font-size: 28px; font-weight: 800; color: #EC4899; font-family: var(--font-heading); margin-bottom: 6px;">Best Delegation</div>
+            <h4 style="font-size: 16px; font-weight: 800; margin-bottom: 8px;">International Model United Nations</h4>
+            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;">
+              Student delegates earned the Outstanding Diplomacy Trophy for global conflict resolution simulations.
+            </p>
+            <div style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 12px;">Youth Global Forum 2026</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Principal's Message (Brief Requirement: Photograph and short message) -->
+    <section class="section">
+      <div class="container">
+        <div class="principal-feature-card">
+          <div class="principal-portrait">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" alt="Dr. Alistair Vance, Principal of EAK International School" loading="lazy" decoding="async">
+          </div>
+          <div>
+            <span class="section-eyebrow">PRINCIPAL'S ADDRESS</span>
+            <h2 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 800; margin-bottom: 16px;">
+              "Education is the kindling of a flame, not the filling of a vessel."
+            </h2>
+            <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 16px;">
+              Welcome to EAK International School. When parents entrust us with their children, we make a solemn promise: to provide an intellectual sanctuary where curiosity is celebrated, questions are encouraged, and every student is equipped with the moral compass to lead with humility.
+            </p>
+            <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 24px;">
+              Our dual CBSE and Cambridge curricula, combined with state-of-the-art laboratory spaces and Olympic athletics, ensure every student discovers their passion and graduates prepared for top higher education and global careers.
+            </p>
+            <div style="margin-bottom: 24px; padding-left: 16px; border-left: 3px solid var(--accent-emerald);">
+              <div style="font-size: 16px; font-weight: 800; color: var(--text-primary);">Dr. Alistair Vance</div>
+              <div style="font-size: 12px; color: var(--text-secondary); font-family: var(--font-mono);">Ph.D. Education (Oxon), M.Ed. (Harvard) • Principal & Head of School</div>
+            </div>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="about.html#leadership" class="btn btn-solid">Read Full Message →</a>
+              <a href="contact.html" class="btn btn-glass">Schedule Campus Interaction</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest News / Notices & Upcoming Events (Brief Requirement) -->
+    <section class="section">
+      <div class="container">
+        <div class="responsive-two-col">
+          <!-- Latest Notices / Announcements -->
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px;">
+              <div>
+                <span class="section-eyebrow">ANNOUNCEMENTS</span>
+                <h3 style="font-size: 22px; font-weight: 800; margin-top: 6px;">Latest School Notices</h3>
+              </div>
+              <a href="events.html" style="font-size: 12px; font-weight: 700; color: var(--accent-emerald);">View All Notices →</a>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div class="glass-card" style="padding: 18px 20px;">
+                <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 6px; font-family: var(--font-mono);">
+                  <span style="color: var(--accent-emerald); font-weight: 700;">CIRCULAR #EAK-2026-44</span>
+                  <span style="color: var(--text-muted);">Oct 05, 2026</span>
+                </div>
+                <h4 style="font-size: 14px; font-weight: 700; margin-bottom: 6px;">Term I Board Assessment & Periodic Test Schedule</h4>
+                <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 10px;">
+                  Timetables and syllabus boundaries for Grades 6 through 12 have been published for upcoming midterm reviews.
+                </p>
+                <a href="events.html" style="font-size: 11px; font-weight: 700; color: var(--accent-sky);">Read Circular Details →</a>
+              </div>
+
+              <div class="glass-card" style="padding: 18px 20px;">
+                <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 6px; font-family: var(--font-mono);">
+                  <span style="color: var(--accent-amber); font-weight: 700;">ADMISSIONS UPDATE</span>
+                  <span style="color: var(--text-muted);">Sep 28, 2026</span>
+                </div>
+                <h4 style="font-size: 14px; font-weight: 700; margin-bottom: 6px;">Merit Scholarship Applications for Session 2027–28</h4>
+                <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 10px;">
+                  Applications open for academic and sports talent concessions across Grade IX and XI entry cohorts.
+                </p>
+                <a href="admissions.html" style="font-size: 11px; font-weight: 700; color: var(--accent-amber);">Scholarship Guidelines →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Events -->
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px;">
+              <div>
+                <span class="section-eyebrow">DIARY DATES</span>
+                <h3 style="font-size: 22px; font-weight: 800; margin-top: 6px;">Upcoming School Events</h3>
+              </div>
+              <a href="events.html" style="font-size: 12px; font-weight: 700; color: var(--accent-sky);">View Full Calendar →</a>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div class="glass-card" style="padding: 18px 20px;">
+                <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 6px; font-family: var(--font-mono);">
+                  <span style="color: var(--accent-emerald); font-weight: 700;">OCT 10, 2026</span>
+                  <span style="background: var(--glass-bg); padding: 2px 8px; border-radius: 4px;">COMPETITION</span>
+                </div>
+                <h4 style="font-size: 14px; font-weight: 700; margin-bottom: 6px;">Annual School Science & STEM Exhibition</h4>
+                <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 10px;">
+                  Over 90 working scientific models and autonomous robotics demonstrations by middle and senior secondary students.
+                </p>
+                <a href="events.html" style="font-size: 11px; font-weight: 700; color: var(--accent-emerald);">Reserve Visitor Entry Pass →</a>
+              </div>
+
+              <div class="glass-card" style="padding: 18px 20px;">
+                <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 6px; font-family: var(--font-mono);">
+                  <span style="color: var(--accent-sky); font-weight: 700;">OCT 17, 2026</span>
+                  <span style="background: var(--glass-bg); padding: 2px 8px; border-radius: 4px;">SPORTS</span>
+                </div>
+                <h4 style="font-size: 14px; font-weight: 700; margin-bottom: 6px;">Inter-House Annual Swimming Championship</h4>
+                <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 10px;">
+                  All 4 houses compete across freestyle, backstroke, and medley relays at the all-weather heated pool.
+                </p>
+                <a href="events.html" style="font-size: 11px; font-weight: 700; color: var(--accent-sky);">Event Schedule & Heats →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Age & Grade Eligibility Calculator -->
+    <section class="section">
+      <div class="container container-narrow" style="max-width: 760px; margin-left: auto; margin-right: auto;">
+        <div class="section-header" style="text-align: center; max-width: 620px; margin-left: auto; margin-right: auto; margin-bottom: 32px;">
+          <span class="section-eyebrow">ADMISSION ADVISOR</span>
+          <h2 class="section-title">Check Grade Eligibility for 2027–28</h2>
+          <p class="section-desc">Select your child's birth year to determine entry level, curriculum pathway, and fee structures.</p>
+        </div>
+
+        <div class="eligibility-box" style="max-width: 760px; margin-left: auto; margin-right: auto;">
+          <div class="eligibility-inputs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: flex-end; margin-bottom: 24px;">
+            <div>
+              <label class="form-label" for="eligibility-birth-year">Child’s Year of Birth</label>
+              <select id="eligibility-birth-year" class="form-select">
+                <option value="2023">2023 (Age 3–4)</option>
+                <option value="2022">2022 (Age 4–5)</option>
+                <option value="2021">2021 (Age 5–6)</option>
+                <option value="2020">2020 (Age 6–7)</option>
+                <option value="2019">2019 (Age 7–8)</option>
+                <option value="2018" selected>2018 (Age 8–9)</option>
+                <option value="2017">2017 (Age 9–10)</option>
+                <option value="2016">2016 (Age 10–11)</option>
+                <option value="2015">2015 (Age 11–12)</option>
+                <option value="2014">2014 (Age 12–13)</option>
+                <option value="2013">2013 (Age 13–14)</option>
+                <option value="2012">2012 (Age 14–15)</option>
+                <option value="2011">2011 (Age 15–16)</option>
+                <option value="2010">2010 (Age 16–17)</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" for="eligibility-board-pref">Curriculum Preference</label>
+              <select id="eligibility-board-pref" class="form-select">
+                <option value="both" selected>CBSE / Cambridge Integrated</option>
+                <option value="cambridge">Cambridge International Pure</option>
+                <option value="cbse">CBSE National Benchmark</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Output Card -->
+          <div class="eligibility-output-card" style="padding: 20px; border-radius: var(--radius-lg); background: var(--glass-bg); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div>
+              <div style="font-size: 11px; font-family: var(--font-mono); color: var(--text-secondary); text-transform: uppercase;">Determined Enrollment Stage</div>
+              <h3 id="eligibility-result-grade" style="font-size: 20px; font-weight: 800; margin: 4px 0; color: var(--accent-emerald);">Grade 3 (Primary Stage)</h3>
+              <p id="eligibility-result-detail" style="font-size: 13px; color: var(--text-secondary); margin: 0;">
+                Cambridge Primary & CBSE Foundational Curriculum with experiential labs.
+              </p>
+            </div>
+            <a id="eligibility-action-btn" href="admissions.html#tuition-calculator" class="btn btn-solid">
+              Estimate Grade 3 Fees →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials / Parent & Student Voices -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">COMMUNITY PERSPECTIVES</span>
+          <h2 class="section-title">Voices of EAK Families & Students</h2>
+          <p class="section-desc">Hear how our balanced educational paradigm transforms prospective students into confident achievers.</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="quote-card">
+            <p style="font-size: 14px; line-height: 1.7; color: var(--text-primary); font-style: italic;">
+              "The transition from rote schooling to EAK's inquiry model was revelatory for Kabir. Within six months, he was exploring science projects and swimming competitively."
+            </p>
+            <div class="quote-author">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Dr. Radhika Sen" class="quote-avatar" loading="lazy" decoding="async">
+              <div>
+                <div style="font-weight: 800; font-size: 13px;">Dr. Radhika Sen</div>
+                <div style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono);">Parent of Grade 9 Student</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="quote-card">
+            <p style="font-size: 14px; line-height: 1.7; color: var(--text-primary); font-style: italic;">
+              "EAK taught me that you don't have to choose between scientific precision and artistic expression. Our mock UN debates were just as inspiring as our computer science projects."
+            </p>
+            <div class="quote-author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Arjun Singhania" class="quote-avatar" loading="lazy" decoding="async">
+              <div>
+                <div style="font-weight: 800; font-size: 13px;">Arjun Singhania</div>
+                <div style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono);">Class of 2025 • School Alumnus (Batch Head)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="quote-card">
+            <p style="font-size: 14px; line-height: 1.7; color: var(--text-primary); font-style: italic;">
+              "The faculty's individual attention and mentorship culture are unmatched. When Ananya struggled with Advanced Mathematics, her teachers built custom interactive visualizations until she mastered it."
+            </p>
+            <div class="quote-author">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="Vikram Malhotra" class="quote-avatar" loading="lazy" decoding="async">
+              <div>
+                <div style="font-weight: 800; font-size: 13px;">Vikram Malhotra</div>
+                <div style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono);">Parent of Grade 11 Student</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Quick-Action Banner -->
+    <section class="section">
+      <div class="container container-narrow" style="text-align: center; max-width: 760px; margin-left: auto; margin-right: auto;">
+        <span class="section-eyebrow">ADMISSIONS ASSISTANCE</span>
+        <h2 class="section-title">Plan Your Child’s Educational Journey</h2>
+        <p class="section-desc" style="margin-bottom: 30px;">
+          Use our interactive tools to estimate annual tuition, test sample admission status tracking, or consult our AI Concierge.
+        </p>
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a href="admissions.html#tuition-calculator" class="btn btn-solid">Tuition Calculator</a>
+          <a href="admissions.html#tracker" class="btn btn-glass">Track Application Status</a>
+          <button type="button" class="btn btn-outline" onclick="document.getElementById('ai-launcher-btn').click();">Ask AI Concierge</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="crest-badge">
+              <img src="assets/logo.svg" alt="EAK Crest" width="28" height="28">
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">EAK</span>
+              <span class="brand-sub">INTERNATIONAL SCHOOL</span>
+            </div>
+          </div>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; max-width: 320px;">
+            Affiliated to Central Board of Secondary Education (CBSE) and registered Cambridge International Centre. Delivering holistic excellence since 2012.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About School</a></li>
+            <li><a href="academics.html">Academic Programs</a></li>
+            <li><a href="admissions.html">Admissions 2027–28</a></li>
+            <li><a href="facilities.html">Campus Facilities</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Interactive Tools</h4>
+          <ul>
+            <li><a href="admissions.html#tuition-calculator">Tuition Estimator</a></li>
+            <li><a href="admissions.html#tracker">Application Status</a></li>
+            <li><a href="facilities.html#virtual-tour">360° Campus Tour</a></li>
+            <li><a href="facilities.html#transit">Bus Route Finder</a></li>
+            <li><a href="events.html">Monthly Calendar</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact & Hours</h4>
+          <p style="margin-bottom: 8px;">Knowledge Boulevard, Sector 54, New Delhi</p>
+          <p style="margin-bottom: 8px;">Phone: +91 11 4567 8900</p>
+          <p style="margin-bottom: 8px;">Email: info@eakschool.edu.in</p>
+          <p style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-emerald);">Office Hours: Mon–Sat 08:00 AM – 04:30 PM</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 EAK International School. All rights reserved. Managed by EAK Pustak Pvt. Ltd.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating AI Assistant Launcher -->
+  <div class="floating-pill">
+    <button type="button" id="ai-launcher-btn" class="btn btn-solid" style="box-shadow: 0 10px 30px rgba(0,0,0,0.5); gap: 10px;">
+      <span class="pulse-dot"></span>
+      <span>Ask EAK AI</span>
+    </button>
+  </div>
+
+  <!-- Shared Drawer Overlay Backdrop -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- "Ask EAK AI" Slide-out Drawer -->
+  <div id="ai-drawer" class="side-drawer">
+    <div class="drawer-header">
+      <div>
+        <h3 style="font-size: 16px; font-weight: 800;">EAK Campus Concierge</h3>
+        <span style="font-size: 11px; color: var(--accent-emerald); font-family: var(--font-mono);">Automated Academic Assistant</span>
+      </div>
+      <button type="button" id="ai-close-btn" class="drawer-close-btn" aria-label="Close Campus Concierge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <!-- Quick Topic Chips -->
+    <div style="padding: 10px 16px; border-bottom: 1px solid var(--border-subtle); display: flex; gap: 8px; overflow-x: auto;">
+      <button type="button" class="font-btn ai-chip-btn">Admissions 2027</button>
+      <button type="button" class="font-btn ai-chip-btn">Tuition Fees</button>
+      <button type="button" class="font-btn ai-chip-btn">School Bus Routes</button>
+      <button type="button" class="font-btn ai-chip-btn">Senior Streams</button>
+    </div>
+
+    <div id="ai-chat-messages" class="drawer-body">
+      <div style="margin-bottom: 12px;">
+        <div style="display: inline-block; background: var(--glass-bg); border: 1px solid var(--border-color); color: var(--text-primary); padding: 10px 14px; border-radius: 16px 16px 16px 2px; font-size: 12px; line-height: 1.5; max-width: 85%;">
+          <div style="font-weight: 700; color: var(--accent-emerald); font-size: 10px; margin-bottom: 4px; font-family: var(--font-mono);">EAK CONCIERGE</div>
+          Welcome! I am the automated admissions concierge for EAK International School. Ask me about admission deadlines, bus routes, fee structures, or curricula.
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <form id="ai-chat-form" style="display: flex; gap: 8px;">
+        <input type="text" id="ai-chat-input" class="form-input" placeholder="Type your admissions question..." style="flex: 1;">
+        <button type="submit" class="btn btn-solid" style="padding: 10px 18px;">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- "My Admissions Shortlist" Slide-out Drawer -->
+  <div id="shortlist-drawer" class="side-drawer">
+    <div class="drawer-header">
+      <div>
+        <h3 style="font-size: 16px; font-weight: 800;">My Admissions Shortlist</h3>
+        <span style="font-size: 11px; color: var(--text-secondary);">Saved items for comparison</span>
+      </div>
+      <button type="button" id="shortlist-close-btn" class="drawer-close-btn" aria-label="Close Admissions Shortlist">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <div id="shortlist-items-container" class="drawer-body">
+      <!-- Items dynamically populated via main.js -->
+    </div>
+
+    <div class="drawer-footer" style="display: flex; gap: 10px;">
+      <button type="button" id="shortlist-print-btn" class="btn btn-outline" style="flex: 1;">Print Shortlist</button>
+      <button type="button" id="shortlist-clear-btn" class="btn btn-outline" style="color: #EF4444;">Clear</button>
+      <a href="admissions.html" class="btn btn-solid" style="flex: 1; text-align: center;">Apply Now</a>
+    </div>
+  </div>
+
+  <!-- Global Search Dialog Modal (Ctrl + K) -->
+  <div id="search-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+        <h3 style="font-size: 16px; font-weight: 800;">Quick Navigation & Search</h3>
+        <button type="button" id="search-close-btn" class="drawer-close-btn" aria-label="Close Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <input type="text" id="search-input" class="form-input" placeholder="Search admissions, facilities, STEM tracks... (Ctrl + K)" style="margin-bottom: 20px;">
+
+      <div id="search-results">
+        <!-- Results rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Vanilla JavaScript -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>

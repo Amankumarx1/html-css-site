@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('eak_theme_vanilla');
+        if (t === 'light') {
+          document.documentElement.classList.add('light-theme');
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Curricula & Pathways | EAK International School</title>
+  <meta name="description" content="Explore K-12 academic curricula, Cambridge & CBSE integration, Senior Secondary specializations, and STEM innovation at EAK International School.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <!-- Fast Typography Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
+  <!-- Tailwind CSS v3 Standalone CDN & Shared Config -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script src="js/tailwind-config.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-preload">
+  <script>
+    (function() {
+      try {
+        if (document.documentElement.classList.contains('light-theme') || localStorage.getItem('eak_theme_vanilla') === 'light') {
+          document.body.classList.add('light-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="brand-logo" aria-label="EAK International School Home">
+          <div class="crest-badge">
+            <img src="assets/logo.svg" alt="EAK Crest" width="28" height="28">
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">EAK</span>
+            <span class="brand-sub">INTERNATIONAL SCHOOL</span>
+          </div>
+        </a>
+
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="academics.html" class="nav-link active">Academics</a>
+          <a href="admissions.html" class="nav-link">Admissions</a>
+          <a href="facilities.html" class="nav-link">Facilities</a>
+          <a href="events.html" class="nav-link">Events</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <button type="button" id="shortlist-launcher-btn" class="icon-btn" title="Admissions Shortlist">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+            <span class="badge-counter shortlist-count-badge" style="display: none;">0</span>
+          </button>
+          <button type="button" class="icon-btn theme-toggle-btn" title="Toggle Theme">
+            <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          </button>
+          <button type="button" class="icon-btn search-trigger-btn" title="Search Site (Ctrl + K)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+          <a href="admissions.html" class="btn btn-glass">Apply Now</a>
+          <button type="button" id="mobile-menu-btn" class="icon-btn menu-toggle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <div class="mobile-drawer-inner">
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Home</span>
+        </a>
+        <a href="about.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span>About School</span>
+        </a>
+        <a href="academics.html" class="mobile-nav-link active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <span>Academic Programs</span>
+        </a>
+        <a href="admissions.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Admissions 2027–28</span>
+        </a>
+        <a href="facilities.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="22.01"/><line x1="15" y1="22" x2="15" y2="22.01"/><line x1="9" y1="18" x2="9" y2="18.01"/><line x1="15" y1="18" x2="15" y2="18.01"/></svg>
+          <span>Campus & Facilities</span>
+        </a>
+        <a href="events.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>Notices & Events</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Contact Campus</span>
+        </a>
+        <button type="button" class="mobile-nav-link mobile-shortlist-launcher" aria-label="Open Admissions Shortlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+          <span>My Admissions Shortlist</span>
+          <span class="shortlist-count-badge mobile-badge">0</span>
+        </button>
+      </div>
+      <div class="mobile-drawer-footer">
+        <a href="admissions.html" class="btn btn-solid" style="width: 100%; text-align: center;">Apply for Admission 2027–28</a>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 11px; color: var(--text-secondary); font-family: var(--font-mono);">
+          <span>Tel: +91 11 4567 8900</span>
+          <span style="color: var(--accent-emerald);">Admissions Open</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" style="padding-top: calc(var(--nav-height) + 20px);">
+    <!-- Hero Banner -->
+    <section class="section" style="padding-top: 50px; padding-bottom: 50px;">
+      <div class="container">
+        <div style="font-size: 11px; font-family: var(--font-mono); color: var(--text-secondary); margin-bottom: 12px;">
+          <a href="index.html">Home</a> / <span style="color: var(--text-primary);">Academics</span>
+        </div>
+        <h1 style="font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 800; margin-bottom: 14px;">
+          Academic Programs & Pathways
+        </h1>
+        <p style="font-size: 16px; color: var(--text-secondary); max-width: 760px; line-height: 1.6;">
+          From foundational primary learning to rigorous senior secondary board excellence, our academic continuum combines Cambridge International frameworks with CBSE national standards.
+        </p>
+      </div>
+    </section>
+
+    <!-- 4 Academic Stages Grid -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">CONTINUUM OF LEARNING</span>
+          <h2 class="section-title">Educational Stages (Nursery to Grade XII)</h2>
+        </div>
+
+        <div class="card-grid">
+          <div class="glass-card">
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-emerald);">STAGE 01 • AGES 3–6</span>
+              <h3 class="card-title" style="margin-top: 6px;">Foundational & Early Years</h3>
+              <p class="card-text">Play-based inquiry, tactile sensorial development, phonics, number sense, and social emotional empathy.</p>
+              <div style="font-size: 12px; color: var(--text-secondary);">Daily Schedule: 08:30 AM – 12:45 PM</div>
+            </div>
+            <button type="button" class="btn btn-outline btn-sm" onclick="addShortlistItem('Early Years Foundation Track', 'Academics');" style="margin-top: 20px;">Bookmark Track <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-left: 4px;"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg></button>
+          </div>
+
+          <div class="glass-card">
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-sky);">STAGE 02 • GRADES 1–5</span>
+              <h3 class="card-title" style="margin-top: 6px;">Primary Preparatory Stage</h3>
+              <p class="card-text">Conceptual mathematics, bilingual literacy, foundational computing, environmental science, and creative arts.</p>
+              <div style="font-size: 12px; color: var(--text-secondary);">Daily Schedule: 08:00 AM – 03:00 PM</div>
+            </div>
+            <button type="button" class="btn btn-outline btn-sm" onclick="addShortlistItem('Primary Preparatory Stage', 'Academics');" style="margin-top: 20px;">Bookmark Track <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-left: 4px;"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg></button>
+          </div>
+
+          <div class="glass-card">
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-amber);">STAGE 03 • GRADES 6–8</span>
+              <h3 class="card-title" style="margin-top: 6px;">Middle School Inquiry</h3>
+              <p class="card-text">Scientific lab practicum, algebraic problem solving, global world history, and introductory Python robotics.</p>
+              <div style="font-size: 12px; color: var(--text-secondary);">Daily Schedule: 08:00 AM – 03:00 PM</div>
+            </div>
+            <button type="button" class="btn btn-outline btn-sm" onclick="addShortlistItem('Middle School Inquiry Track', 'Academics');" style="margin-top: 20px;">Bookmark Track <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-left: 4px;"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg></button>
+          </div>
+
+          <div class="glass-card">
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: #A855F7;">STAGE 04 • GRADES 9–12</span>
+              <h3 class="card-title" style="margin-top: 6px;">Senior Secondary Stage</h3>
+              <p class="card-text">Specialized senior streams (Science PCM, Science PCB, Commerce, and Humanities) paired with board exam and career counseling.</p>
+              <div style="font-size: 12px; color: var(--text-secondary);">Daily Schedule: 08:00 AM – 03:00 PM</div>
+            </div>
+            <button type="button" class="btn btn-outline btn-sm" onclick="addShortlistItem('Senior Secondary Honors Track', 'Academics');" style="margin-top: 20px;">Bookmark Track <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-left: 4px;"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Stream & Timetable Explorer -->
+    <section id="streams" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">SENIOR SECONDARY EXPLORER</span>
+          <h2 class="section-title">Specialized Grade XI & XII Academic Streams</h2>
+          <p class="section-desc">Select an academic stream below to view course combinations and download the curriculum prospectus.</p>
+        </div>
+
+        <div class="tool-box">
+          <!-- Stream Tabs -->
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px;">
+            <button type="button" class="btn btn-solid stream-tab-btn" data-stream="stem">Science (PCM)</button>
+            <button type="button" class="btn btn-outline stream-tab-btn" data-stream="medical">Science (PCB)</button>
+            <button type="button" class="btn btn-outline stream-tab-btn" data-stream="fintech">Commerce</button>
+            <button type="button" class="btn btn-outline stream-tab-btn" data-stream="humanities">Humanities & Arts</button>
+          </div>
+
+          <div style="background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px;">
+            <h3 id="stream-title" style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Science Stream (Physics, Chemistry & Mathematics)</h3>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">
+              Senior Secondary Pathway: Comprehensive Board Examination preparation with laboratory practicals, Olympiad mentoring, and competitive exam guidance.
+            </p>
+
+            <div style="margin-bottom: 20px;">
+              <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); font-family: var(--font-mono);">Core Subjects:</span>
+              <p id="stream-subjects" style="font-size: 13px; font-weight: 600; color: var(--text-primary); margin-top: 4px;">
+                Physics, Chemistry, Mathematics, Computer Science / English Core
+              </p>
+            </div>
+
+            <div style="display: flex; gap: 12px;">
+              <button type="button" id="stream-download-btn" class="btn btn-glass">Download Syllabus (.txt) ↓</button>
+              <a href="admissions.html" class="btn btn-solid">Apply for Grade XI Seat →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curriculum Comparison Matrix -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">ACCREDITATION BENCHMARK</span>
+          <h2 class="section-title">CBSE vs. Cambridge Framework Matrix</h2>
+          <p class="section-desc">Understand how our internationally integrated academic model provides strong foundations for board examinations and higher education opportunities.</p>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="comp-matrix">
+            <thead>
+              <tr>
+                <th style="width: 28%;">Academic Dimension</th>
+                <th style="width: 24%;">CBSE Senior Secondary</th>
+                <th style="width: 24%;">Cambridge Assessment (CIE)</th>
+                <th style="width: 24%; color: var(--accent-emerald);">EAK Integrated Flagship ★</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Global Recognition</strong></td>
+                <td>India (IIT, AIIMS, DU, BITS) & Select Overseas</td>
+                <td>140+ Countries (Ivy League, Oxbridge, Russell)</td>
+                <td><span style="color: var(--accent-emerald); font-weight: 700;">Dual Worldwide Mobility</span></td>
+              </tr>
+              <tr>
+                <td><strong>Pedagogy Focus</strong></td>
+                <td>Rigorous Theory & Competitive Prep</td>
+                <td>Inquiry, Critical Analysis & Research</td>
+                <td><span style="color: var(--accent-emerald); font-weight: 700;">Rigorous Theory + Deep Inquiry</span></td>
+              </tr>
+              <tr>
+                <td><strong>AI & Cobotics Practicum</strong></td>
+                <td>Elective CS Syllabus</td>
+                <td>Design & Technology Core</td>
+                <td><span style="color: var(--accent-emerald); font-weight: 700;">Mandatory 6-Axis Robotic Labs</span></td>
+              </tr>
+              <tr>
+                <td><strong>College Counselling</strong></td>
+                <td>National JEE / NEET Advisory</td>
+                <td>CommonApp & UCAS Guidance</td>
+                <td><span style="color: var(--accent-emerald); font-weight: 700;">1:1 Bespoke Global Portfolio Mentorship</span></td>
+              </tr>
+              <tr>
+                <td><strong>Assessment Model</strong></td>
+                <td>Term-End Board Examinations</td>
+                <td>Criterion-Referenced Portfolios & Papers</td>
+                <td><span style="color: var(--accent-emerald); font-weight: 700;">Continuous Portfolio + Board Readiness</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaching Methodology (Brief Requirement) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">PEDAGOGICAL EXCELLENCE</span>
+          <h2 class="section-title">Teaching Methodology: How EAK Students Learn</h2>
+          <p class="section-desc">Our learner-centered paradigm moves beyond passive rote memorization into deep inquiry, critical argumentation, and practical application.</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="glass-card">
+            <div>
+              <div class="card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+              </div>
+              <h3 class="card-title">Inquiry-Led Discovery</h3>
+              <p class="card-text">
+                Lessons begin with intriguing open-ended problems rather than predetermined answers. Students formulate hypotheses, experiment in laboratory groups, and synthesize findings.
+              </p>
+            </div>
+            <div style="font-size: 11px; font-family: var(--font-mono); color: var(--accent-emerald);">Active Learning Framework</div>
+          </div>
+
+          <div class="glass-card">
+            <div>
+              <div class="card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <h3 class="card-title">Interdisciplinary Integration</h3>
+              <p class="card-text">
+                Science connects with ethics; mathematics inspires algorithmic art; literature informs historical debate. Students develop multidimensional thinking essential for tomorrow's careers.
+              </p>
+            </div>
+            <div style="font-size: 11px; font-family: var(--font-mono); color: var(--accent-sky);">STEAM Synthesis</div>
+          </div>
+
+          <div class="glass-card">
+            <div>
+              <div class="card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>
+              </div>
+              <h3 class="card-title">Continuous Diagnostic Feedback</h3>
+              <p class="card-text">
+                Formative assessments, peer reviews, and interactive digital quizzes ensure misunderstandings are diagnosed immediately rather than waiting for term-end board tests.
+              </p>
+            </div>
+            <div style="font-size: 11px; font-family: var(--font-mono); color: var(--accent-amber);">1:1 Academic Mentorship</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Co-Curricular Activities & Student Clubs (Brief Requirement) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">HOLISTIC DEVELOPMENT</span>
+          <h2 class="section-title">Co-Curricular Activities & Student Clubs</h2>
+          <p class="section-desc">Every student participates in at least two structured co-curricular guilds, cultivating leadership, teamwork, and artistic refinement.</p>
+        </div>
+
+        <div class="club-grid">
+          <div class="club-card">
+            <div>
+              <span style="font-size: 10px; font-family: var(--font-mono); color: var(--accent-sky); font-weight: 700;">TECHNOLOGY & STEM</span>
+              <h4 style="font-size: 16px; font-weight: 800; margin: 6px 0 8px;">Turing Robotics & AI Guild</h4>
+              <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+                Building autonomous competitive robots, Python automation, and participating in national STEM hackathons.
+              </p>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 11px; color: var(--text-muted); font-family: var(--font-mono);">
+              <span>Grades 6–12</span>
+              <span style="color: var(--accent-emerald);">Every Wednesday</span>
+            </div>
+          </div>
+
+          <div class="club-card">
+            <div>
+              <span style="font-size: 10px; font-family: var(--font-mono); color: var(--accent-amber); font-weight: 700;">ORATORY & DIPLOMACY</span>
+              <h4 style="font-size: 16px; font-weight: 800; margin: 6px 0 8px;">Model UN & Debate Society</h4>
+              <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+                Parliamentary debate, resolution drafting, cross-examination techniques, and international diplomatic simulations.
+              </p>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 11px; color: var(--text-muted); font-family: var(--font-mono);">
+              <span>Grades 8–12</span>
+              <span style="color: var(--accent-emerald);">Every Thursday</span>
+            </div>
+          </div>
+
+          <div class="club-card">
+            <div>
+              <span style="font-size: 10px; font-family: var(--font-mono); color: #EC4899; font-weight: 700;">CREATIVE EXPRESSION</span>
+              <h4 style="font-size: 16px; font-weight: 800; margin: 6px 0 8px;">Visual Arts & Ceramics Studio</h4>
+              <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+                Oil painting, pottery wheel throwing, digital illustration, and curation for the annual campus gallery exhibition.
+              </p>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 11px; color: var(--text-muted); font-family: var(--font-mono);">
+              <span>Grades 4–12</span>
+              <span style="color: var(--accent-emerald);">Every Friday</span>
+            </div>
+          </div>
+
+          <div class="club-card">
+            <div>
+              <span style="font-size: 10px; font-family: var(--font-mono); color: #8B5CF6; font-weight: 700;">PERFORMING ARTS</span>
+              <h4 style="font-size: 16px; font-weight: 800; margin: 6px 0 8px;">School Symphony & Theatre Ensemble</h4>
+              <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+                Classical string orchestra, choir vocal training, stage production, and lighting design in our amphitheatre.
+              </p>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 11px; color: var(--text-muted); font-family: var(--font-mono);">
+              <span>Grades 5–12</span>
+              <span style="color: var(--accent-emerald);">Every Tuesday</span>
+            </div>
+          </div>
+
+          <div class="club-card">
+            <div>
+              <span style="font-size: 10px; font-family: var(--font-mono); color: var(--accent-emerald); font-weight: 700;">ENVIRONMENT & NATURE</span>
+              <h4 style="font-size: 16px; font-weight: 800; margin: 6px 0 8px;">Eco-Guardians & Botany Club</h4>
+              <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+                Campus hydroponic farming, rainwater auditing, zero-waste composting, and urban biodiversity tracking.
+              </p>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 11px; color: var(--text-muted); font-family: var(--font-mono);">
+              <span>Grades 3–12</span>
+              <span style="color: var(--accent-emerald);">Every Monday</span>
+            </div>
+          </div>
+
+          <div class="club-card">
+            <div>
+              <span style="font-size: 10px; font-family: var(--font-mono); color: var(--accent-sky); font-weight: 700;">ATHLETIC ACADEMIES</span>
+              <h4 style="font-size: 16px; font-weight: 800; margin: 6px 0 8px;">Elite Aquatics & Sports Academies</h4>
+              <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+                Master coaching in competitive swimming strokes, basketball tactical drills, football, and chess masterclasses.
+              </p>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 11px; color: var(--text-muted); font-family: var(--font-mono);">
+              <span>All Grades</span>
+              <span style="color: var(--accent-emerald);">Daily After School</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Academic Achievements (Brief Requirement) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">ACADEMIC DISTINCTIONS</span>
+          <h2 class="section-title">Academic Achievements & Board Exam Hall of Fame</h2>
+          <p class="section-desc">Consistent excellence in national board examinations, Olympiads, and international university placements.</p>
+        </div>
+
+        <div class="achievement-grid">
+          <div class="achievement-card">
+            <div style="font-size: 32px; font-weight: 800; color: var(--accent-emerald); font-family: var(--font-heading);">100%</div>
+            <h4 style="font-size: 15px; font-weight: 800; margin: 4px 0 6px;">CBSE Class XII Pass Rate</h4>
+            <p style="font-size: 12px; color: var(--text-secondary);">School topper secured 99.2% aggregate in Science (PCM).</p>
+          </div>
+
+          <div class="achievement-card">
+            <div style="font-size: 32px; font-weight: 800; color: var(--accent-sky); font-family: var(--font-heading);">A* / A</div>
+            <h4 style="font-size: 15px; font-weight: 800; margin: 4px 0 6px;">78% Cambridge IGCSE Grades</h4>
+            <p style="font-size: 12px; color: var(--text-secondary);">Outstanding Cambridge Learner Awards in Mathematics & Physics.</p>
+          </div>
+
+          <div class="achievement-card">
+            <div style="font-size: 32px; font-weight: 800; color: var(--accent-amber); font-family: var(--font-heading);">Top 1%</div>
+            <h4 style="font-size: 15px; font-weight: 800; margin: 4px 0 6px;">National Science Olympiad</h4>
+            <p style="font-size: 12px; color: var(--text-secondary);">18 students ranked in the national top percentile for NSO & IMO.</p>
+          </div>
+
+          <div class="achievement-card">
+            <div style="font-size: 32px; font-weight: 800; color: #A855F7; font-family: var(--font-heading);">100%</div>
+            <h4 style="font-size: 15px; font-weight: 800; margin: 4px 0 6px;">Higher Education Placement</h4>
+            <p style="font-size: 12px; color: var(--text-secondary);">Graduates admitted to premier institutions in India and abroad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding: 0;">
+        <div>© 2026 EAK International School. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating AI Assistant Launcher -->
+  <div class="floating-pill">
+    <button type="button" id="ai-launcher-btn" class="btn btn-solid" style="gap: 10px;">
+      <span class="pulse-dot"></span>
+      <span>Ask EAK AI</span>
+    </button>
+  </div>
+
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Drawers & Modals -->
+  <div id="ai-drawer" class="side-drawer">
+    <div class="drawer-header">
+      <h3 style="font-size: 16px; font-weight: 800;">EAK Campus Concierge</h3>
+      <button type="button" id="ai-close-btn" class="drawer-close-btn" aria-label="Close Campus Concierge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="ai-chat-messages" class="drawer-body"></div>
+    <div class="drawer-footer">
+      <form id="ai-chat-form" style="display: flex; gap: 8px;">
+        <input type="text" id="ai-chat-input" class="form-input" placeholder="Type your admissions question..." style="flex: 1;">
+        <button type="submit" class="btn btn-solid">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="shortlist-drawer" class="side-drawer">
+    <div class="drawer-header">
+      <h3 style="font-size: 16px; font-weight: 800;">My Admissions Shortlist</h3>
+      <button type="button" id="shortlist-close-btn" class="drawer-close-btn" aria-label="Close Admissions Shortlist">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="shortlist-items-container" class="drawer-body"></div>
+    <div class="drawer-footer">
+      <button type="button" id="shortlist-print-btn" class="btn btn-outline" style="width: 100%;">Print Shortlist</button>
+    </div>
+  </div>
+
+  <div id="search-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <h3 style="font-size: 16px; font-weight: 800;">Search Site (Ctrl + K)</h3>
+        <button type="button" id="search-close-btn" class="drawer-close-btn" aria-label="Close Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <input type="text" id="search-input" class="form-input" placeholder="Type to search...">
+      <div id="search-results" style="margin-top: 14px;"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

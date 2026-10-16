@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('eak_theme_vanilla');
+        if (t === 'light') {
+          document.documentElement.classList.add('light-theme');
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us & Campus Directions | EAK International School</title>
+  <meta name="description" content="Get in touch with the admissions office, transport desk, and leadership at EAK International School. Schedule a physical campus walkthrough.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <!-- Fast Typography Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
+  <!-- Tailwind CSS v3 Standalone CDN & Shared Config -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script src="js/tailwind-config.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-preload">
+  <script>
+    (function() {
+      try {
+        if (document.documentElement.classList.contains('light-theme') || localStorage.getItem('eak_theme_vanilla') === 'light') {
+          document.body.classList.add('light-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="brand-logo" aria-label="EAK International School Home">
+          <div class="crest-badge">
+            <img src="assets/logo.svg" alt="EAK Crest" width="28" height="28">
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">EAK</span>
+            <span class="brand-sub">INTERNATIONAL SCHOOL</span>
+          </div>
+        </a>
+
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="academics.html" class="nav-link">Academics</a>
+          <a href="admissions.html" class="nav-link">Admissions</a>
+          <a href="facilities.html" class="nav-link">Facilities</a>
+          <a href="events.html" class="nav-link">Events</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <button type="button" id="shortlist-launcher-btn" class="icon-btn" title="Admissions Shortlist">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+            <span class="badge-counter shortlist-count-badge" style="display: none;">0</span>
+          </button>
+          <button type="button" class="icon-btn theme-toggle-btn" title="Toggle Theme">
+            <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          </button>
+          <button type="button" class="icon-btn search-trigger-btn" title="Search Site (Ctrl + K)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+          <a href="admissions.html" class="btn btn-glass">Apply Now</a>
+          <button type="button" id="mobile-menu-btn" class="icon-btn menu-toggle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <div class="mobile-drawer-inner">
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Home</span>
+        </a>
+        <a href="about.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span>About School</span>
+        </a>
+        <a href="academics.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <span>Academic Programs</span>
+        </a>
+        <a href="admissions.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Admissions 2027–28</span>
+        </a>
+        <a href="facilities.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="22.01"/><line x1="15" y1="22" x2="15" y2="22.01"/><line x1="9" y1="18" x2="9" y2="18.01"/><line x1="15" y1="18" x2="15" y2="18.01"/></svg>
+          <span>Campus & Facilities</span>
+        </a>
+        <a href="events.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>Notices & Events</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-link active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Contact Campus</span>
+        </a>
+        <button type="button" class="mobile-nav-link mobile-shortlist-launcher" aria-label="Open Admissions Shortlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+          <span>My Admissions Shortlist</span>
+          <span class="shortlist-count-badge mobile-badge">0</span>
+        </button>
+      </div>
+      <div class="mobile-drawer-footer">
+        <a href="admissions.html" class="btn btn-solid" style="width: 100%; text-align: center;">Apply for Admission 2027–28</a>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 11px; color: var(--text-secondary); font-family: var(--font-mono);">
+          <span>Tel: +91 11 4567 8900</span>
+          <span style="color: var(--accent-emerald);">Admissions Open</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" style="padding-top: calc(var(--nav-height) + 20px);">
+    <!-- Hero Banner -->
+    <section class="section" style="padding-top: 50px; padding-bottom: 50px;">
+      <div class="container">
+        <div style="font-size: 11px; font-family: var(--font-mono); color: var(--text-secondary); margin-bottom: 12px;">
+          <a href="index.html">Home</a> / <span style="color: var(--text-primary);">Contact</span>
+        </div>
+        <h1 style="font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 800; margin-bottom: 14px;">
+          Contact Campus & Admissions
+        </h1>
+        <p style="font-size: 16px; color: var(--text-secondary); max-width: 760px; line-height: 1.6;">
+          Our admissions counselors, parent helpdesk, and school transport coordinators are here to assist your family. Schedule an in-person campus walkthrough or get in touch below.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Grid -->
+    <section class="section">
+      <div class="container">
+        <div class="responsive-two-col">
+          <!-- Desks & Info -->
+          <div>
+            <span class="section-eyebrow">DIRECT CONTACT DIRECTORY</span>
+            <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 24px;">Campus Departments & Helpdesks</h2>
+
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div class="glass-card" style="padding: 20px;">
+                <h4 style="font-size: 15px; font-weight: 800;">Admissions Office & Counselors</h4>
+                <p style="font-size: 13px; color: var(--text-secondary); margin: 4px 0 10px;">For application guidance, scholarships, and school walkthroughs.</p>
+                <div style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-emerald); display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                  <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +91 11 4567 8900</span>
+                  <span>•</span>
+                  <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px;"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> admissions@eakschool.edu.in</span>
+                </div>
+              </div>
+
+              <div class="glass-card" style="padding: 20px;">
+                <h4 style="font-size: 15px; font-weight: 800;">School Bus & Transport Helpdesk</h4>
+                <p style="font-size: 13px; color: var(--text-secondary); margin: 4px 0 10px;">For bus stops, route feasibility, and RFID tracking support.</p>
+                <div style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-sky); display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                  <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +91 98712 34000</span>
+                  <span>•</span>
+                  <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px;"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> transport@eakschool.edu.in</span>
+                </div>
+              </div>
+
+              <div class="glass-card" style="padding: 20px;">
+                <h4 style="font-size: 15px; font-weight: 800;">School Infirmary & Medical Care</h4>
+                <p style="font-size: 13px; color: var(--text-secondary); margin: 4px 0 10px;">24/7 on-call pediatric nurses and school medical staff.</p>
+                <div style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-amber); display: flex; align-items: center; gap: 8px;">
+                  <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +91 11 4567 8905 (Direct Medical Line)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Campus Address & Hours Box -->
+            <div style="margin-top: 24px; padding: 22px; border-radius: var(--radius-lg); background: var(--bg-secondary); border: 1px solid var(--border-color);">
+              <h4 style="font-size: 15px; font-weight: 800; margin-bottom: 8px;">Campus Address & Office Hours</h4>
+              <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px;">
+                Knowledge Boulevard, Institutional Area, Sector 54, New Delhi – 110001.<br>
+                Nearest Metro Station: HUDA City Centre (Gate 2 Shuttle Available Every 15 Mins).
+              </p>
+              
+              <div style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; margin-bottom: 16px; border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+                <div style="display: flex; justify-content: space-between;">
+                  <span style="color: var(--text-muted);">Administrative Office:</span>
+                  <span style="font-weight: 700; color: var(--accent-emerald);">Mon–Sat 08:00 AM – 04:30 PM</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                  <span style="color: var(--text-muted);">Admissions Inquiry Desk:</span>
+                  <span style="font-weight: 700; color: var(--text-primary);">Mon–Sat 09:00 AM – 03:30 PM</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                  <span style="color: var(--text-muted);">Sundays & Gazetted Holidays:</span>
+                  <span style="color: var(--text-secondary);">Closed</span>
+                </div>
+              </div>
+
+              <!-- Social Media Channels -->
+              <div style="border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+                <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; font-family: var(--font-mono); color: var(--text-muted);">Official Social Channels</span>
+                <div style="display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap;">
+                  <a href="#" class="font-btn" style="text-decoration: none;" onclick="alert('EAK School YouTube Channel (Simulated)'); return false;">YouTube</a>
+                  <a href="#" class="font-btn" style="text-decoration: none;" onclick="alert('EAK School LinkedIn Page (Simulated)'); return false;">LinkedIn</a>
+                  <a href="#" class="font-btn" style="text-decoration: none;" onclick="alert('EAK School Instagram (Simulated)'); return false;">Instagram</a>
+                  <a href="#" class="font-btn" style="text-decoration: none;" onclick="alert('EAK School X / Twitter (Simulated)'); return false;">X (Twitter)</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Schedule Walkthrough Form -->
+          <div>
+            <span class="section-eyebrow">PHYSICAL TOUR REGISTRATION</span>
+            <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 24px;">Book a Guided Walkthrough</h2>
+
+            <form data-simulate class="tool-box">
+              <div class="form-group">
+                <label class="form-label">Parent / Guardian Name *</label>
+                <input type="text" class="form-input" required placeholder="e.g. Dr. Sameer Kapoor">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Email Address *</label>
+                <input type="email" class="form-input" required placeholder="sameer.kapoor@example.com">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Phone Number *</label>
+                <input type="tel" class="form-input" required placeholder="+91 98111 22334">
+              </div>
+
+              <div class="responsive-two-col-tight">
+                <div class="form-group">
+                  <label class="form-label">Preferred Date</label>
+                  <input type="date" class="form-input" value="2026-10-20">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Preferred Slot</label>
+                  <select class="form-select">
+                    <option>Morning (10:00 AM – 11:30 AM)</option>
+                    <option>Afternoon (02:00 PM – 03:30 PM)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Areas You Would Like to Inspect</label>
+                <div style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--text-secondary); margin-top: 6px;">
+                  <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox" checked> Turing Robotics & AI Prototyping Labs
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox" checked> Olympic 50m Aquatics Complex
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox"> Alexander Research Library & Quiet Pods
+                  </label>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-solid btn-lg" style="width: 100%;">Schedule Guided Campus Walkthrough →</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Styled Campus Map Placeholder Section (Brief Requirement) -->
+        <div style="margin-top: 60px;">
+          <div class="section-header" style="margin-bottom: 24px;">
+            <span class="section-eyebrow">GEOGRAPHIC LOCATION</span>
+            <h2 class="section-title">Interactive Campus Locator & Map</h2>
+            <p class="section-desc">Located in the green institutional belt with direct arterial connectivity from New Delhi and Gurugram.</p>
+          </div>
+
+          <div class="map-visual-box" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 24px; position: relative;">
+            <div style="position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(16, 185, 129, 0.08) 0%, transparent 70%);"></div>
+            
+            <div style="position: relative; z-index: 2;">
+              <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); padding: 6px 14px; border-radius: var(--radius-full); border: 1px solid var(--border-color); font-family: var(--font-mono); font-size: 11px; color: var(--accent-emerald); margin-bottom: 12px;">
+                <span class="pulse-dot"></span>
+                <span>GPS COORD: 28.4595° N, 77.0266° E</span>
+              </div>
+              <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 6px;">EAK International School Main Campus</h3>
+              <p style="font-size: 13px; color: var(--text-secondary); max-width: 520px; margin: 0 auto 18px;">
+                Knowledge Boulevard, Sector 54, Institutional Area, New Delhi – 110001
+              </p>
+              <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-solid btn-sm">Open in Maps ↗</a>
+                <a href="facilities.html#transit" class="btn btn-glass btn-sm">View School Bus Stops →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding: 0;">
+        <div>© 2026 EAK International School. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating AI Assistant Launcher -->
+  <div class="floating-pill">
+    <button type="button" id="ai-launcher-btn" class="btn btn-solid" style="gap: 10px;">
+      <span class="pulse-dot"></span>
+      <span>Ask EAK AI</span>
+    </button>
+  </div>
+
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Drawers & Modals -->
+  <div id="ai-drawer" class="side-drawer">
+    <div class="drawer-header">
+      <h3 style="font-size: 16px; font-weight: 800;">EAK Campus Concierge</h3>
+      <button type="button" id="ai-close-btn" class="drawer-close-btn" aria-label="Close Campus Concierge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="ai-chat-messages" class="drawer-body"></div>
+    <div class="drawer-footer">
+      <form id="ai-chat-form" style="display: flex; gap: 8px;">
+        <input type="text" id="ai-chat-input" class="form-input" placeholder="Ask about campus location or office hours..." style="flex: 1;">
+        <button type="submit" class="btn btn-solid">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="shortlist-drawer" class="side-drawer">
+    <div class="drawer-header">
+      <h3 style="font-size: 16px; font-weight: 800;">My Admissions Shortlist</h3>
+      <button type="button" id="shortlist-close-btn" class="drawer-close-btn" aria-label="Close Admissions Shortlist">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="shortlist-items-container" class="drawer-body"></div>
+    <div class="drawer-footer">
+      <button type="button" id="shortlist-print-btn" class="btn btn-outline" style="width: 100%;">Print Shortlist</button>
+    </div>
+  </div>
+
+  <div id="search-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <h3 style="font-size: 16px; font-weight: 800;">Search Site (Ctrl + K)</h3>
+        <button type="button" id="search-close-btn" class="drawer-close-btn" aria-label="Close Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <input type="text" id="search-input" class="form-input" placeholder="Type to search...">
+      <div id="search-results" style="margin-top: 14px;"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('eak_theme_vanilla');
+        if (t === 'light') {
+          document.documentElement.classList.add('light-theme');
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admissions 2027–28 | EAK International School</title>
+  <meta name="description" content="Apply for admission at EAK International School for the 2027–28 academic session. Use our tuition fee estimator and track your application status.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <!-- Fast Typography Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
+  <!-- Tailwind CSS v3 Standalone CDN & Shared Config -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script src="js/tailwind-config.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-preload">
+  <script>
+    (function() {
+      try {
+        if (document.documentElement.classList.contains('light-theme') || localStorage.getItem('eak_theme_vanilla') === 'light') {
+          document.body.classList.add('light-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="brand-logo" aria-label="EAK International School Home">
+          <div class="crest-badge">
+            <img src="assets/logo.svg" alt="EAK Crest" width="28" height="28">
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">EAK</span>
+            <span class="brand-sub">INTERNATIONAL SCHOOL</span>
+          </div>
+        </a>
+
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="academics.html" class="nav-link">Academics</a>
+          <a href="admissions.html" class="nav-link active">Admissions</a>
+          <a href="facilities.html" class="nav-link">Facilities</a>
+          <a href="events.html" class="nav-link">Events</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <button type="button" id="shortlist-launcher-btn" class="icon-btn" title="Admissions Shortlist">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+            <span class="badge-counter shortlist-count-badge" style="display: none;">0</span>
+          </button>
+          <button type="button" class="icon-btn theme-toggle-btn" title="Toggle Theme">
+            <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          </button>
+          <button type="button" class="icon-btn search-trigger-btn" title="Search Site (Ctrl + K)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+          <a href="#inquiry" class="btn btn-solid">Apply Now</a>
+          <button type="button" id="mobile-menu-btn" class="icon-btn menu-toggle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <div class="mobile-drawer-inner">
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Home</span>
+        </a>
+        <a href="about.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span>About School</span>
+        </a>
+        <a href="academics.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <span>Academic Programs</span>
+        </a>
+        <a href="admissions.html" class="mobile-nav-link active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Admissions 2027–28</span>
+        </a>
+        <a href="facilities.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="22.01"/><line x1="15" y1="22" x2="15" y2="22.01"/><line x1="9" y1="18" x2="9" y2="18.01"/><line x1="15" y1="18" x2="15" y2="18.01"/></svg>
+          <span>Campus & Facilities</span>
+        </a>
+        <a href="events.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>Notices & Events</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Contact Campus</span>
+        </a>
+        <button type="button" class="mobile-nav-link mobile-shortlist-launcher" aria-label="Open Admissions Shortlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+          <span>My Admissions Shortlist</span>
+          <span class="shortlist-count-badge mobile-badge">0</span>
+        </button>
+      </div>
+      <div class="mobile-drawer-footer">
+        <a href="admissions.html" class="btn btn-solid" style="width: 100%; text-align: center;">Apply for Admission 2027–28</a>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 11px; color: var(--text-secondary); font-family: var(--font-mono);">
+          <span>Tel: +91 11 4567 8900</span>
+          <span style="color: var(--accent-emerald);">Admissions Open</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" style="padding-top: calc(var(--nav-height) + 20px);">
+    <!-- Hero Banner -->
+    <section class="section" style="padding-top: 50px; padding-bottom: 50px;">
+      <div class="container">
+        <div style="font-size: 11px; font-family: var(--font-mono); color: var(--text-secondary); margin-bottom: 12px;">
+          <a href="index.html">Home</a> / <span style="color: var(--text-primary);">Admissions</span>
+        </div>
+        <h1 style="font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 800; margin-bottom: 14px;">
+          Admissions 2027–28
+        </h1>
+        <p style="font-size: 16px; color: var(--text-secondary); max-width: 760px; line-height: 1.6;">
+          Join our vibrant community of students and learners. Transparent evaluation, personalized parent interactions, and merit scholarships across Nursery through Grade XI.
+        </p>
+      </div>
+    </section>
+
+    <!-- 5-Step Process -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">STEP-BY-STEP ROADMAP</span>
+          <h2 class="section-title">Admission Process Timeline</h2>
+        </div>
+
+        <div class="stepper">
+          <div class="step-item active">
+            <div style="font-weight: 800; color: var(--accent-emerald);">01</div>
+            <div style="font-weight: 700; margin: 4px 0;">Enquiry</div>
+            <div style="color: var(--text-secondary); font-size: 10px;">Online inquiry & physical campus walkthrough</div>
+          </div>
+          <div class="step-item">
+            <div style="font-weight: 800;">02</div>
+            <div style="font-weight: 700; margin: 4px 0;">Application</div>
+            <div style="color: var(--text-secondary); font-size: 10px;">Form completion & document submission</div>
+          </div>
+          <div class="step-item">
+            <div style="font-weight: 800;">03</div>
+            <div style="font-weight: 700; margin: 4px 0;">Interaction / Assessment</div>
+            <div style="color: var(--text-secondary); font-size: 10px;">Friendly dialogue & developmental readiness check</div>
+          </div>
+          <div class="step-item">
+            <div style="font-weight: 800;">04</div>
+            <div style="font-weight: 700; margin: 4px 0;">Selection</div>
+            <div style="color: var(--text-secondary); font-size: 10px;">Provisional offer letter & scholarship review</div>
+          </div>
+          <div class="step-item">
+            <div style="font-weight: 800;">05</div>
+            <div style="font-weight: 700; margin: 4px 0;">Enrollment</div>
+            <div style="color: var(--text-secondary); font-size: 10px;">Admission confirmation & onboarding kit</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Eligibility Criteria & Important Dates (Brief Requirement) -->
+    <section class="section">
+      <div class="container">
+        <div class="responsive-two-col">
+          <!-- Eligibility Criteria Table -->
+          <div>
+            <div class="section-header" style="text-align: left; margin-bottom: 24px;">
+              <span class="section-eyebrow">AGE BENCHMARKS</span>
+              <h2 class="section-title" style="font-size: 22px;">Eligibility Criteria (2027–28)</h2>
+              <p class="section-desc">Age calculated as of March 31, 2027, as per CBSE and state guidelines.</p>
+            </div>
+
+            <div style="overflow-x: auto;">
+              <table class="dates-table">
+                <thead>
+                  <tr>
+                    <th>Grade / Stage</th>
+                    <th>Age Requirement</th>
+                    <th>Prior Benchmark</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Nursery</strong></td>
+                    <td>3+ Years</td>
+                    <td>Informal Interaction</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Kindergarten (KG)</strong></td>
+                    <td>4+ Years</td>
+                    <td>Basic Social Readiness</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Grade 1 (Primary)</strong></td>
+                    <td>5+ to 6 Years</td>
+                    <td>Foundational Literacy</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Grade 6 (Middle)</strong></td>
+                    <td>10+ to 11 Years</td>
+                    <td>Grade 5 Report Card</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Grade 9 (Secondary)</strong></td>
+                    <td>13+ to 14 Years</td>
+                    <td>Grade 8 Pass Certificate</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Grade 11 (Senior Sec)</strong></td>
+                    <td>15+ to 16 Years</td>
+                    <td>Class X Board Results (60%+)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Important Dates Table -->
+          <div>
+            <div class="section-header" style="text-align: left; margin-bottom: 24px;">
+              <span class="section-eyebrow">ADMISSION SCHEDULE</span>
+              <h2 class="section-title" style="font-size: 22px;">Important Dates & Deadlines</h2>
+              <p class="section-desc">Mark your calendar for key admission milestones.</p>
+            </div>
+
+            <div style="overflow-x: auto;">
+              <table class="dates-table">
+                <thead>
+                  <tr>
+                    <th>Admissions Milestone</th>
+                    <th>Scheduled Date</th>
+                    <th>Stage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Online Inquiries Open</strong></td>
+                    <td>October 01, 2026</td>
+                    <td><span style="color: var(--accent-emerald); font-weight: 700;">Open Now</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Early Bird Priority Deadline</strong></td>
+                    <td>November 15, 2026</td>
+                    <td>Application</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Parent & Student Interactions</strong></td>
+                    <td>Dec 01 – Dec 20, 2026</td>
+                    <td>Assessment</td>
+                  </tr>
+                  <tr>
+                    <td><strong>First Merit List Declaration</strong></td>
+                    <td>January 10, 2027</td>
+                    <td>Selection</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Seat Acceptance & Enrollment</strong></td>
+                    <td>January 25, 2027</td>
+                    <td>Enrollment</td>
+                  </tr>
+                  <tr>
+                    <td><strong>New Academic Session Starts</strong></td>
+                    <td>April 05, 2027</td>
+                    <td>Orientation</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Required Documents Checklist (Brief Requirement: Interactive) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">VERIFICATION CHECKLIST</span>
+          <h2 class="section-title">Required Documents for Admission</h2>
+          <p class="section-desc">Click each item below to check off documents you have prepared for verification.</p>
+        </div>
+
+        <!-- Live Verification Progress Bar (Tailwind + Vanilla JS) -->
+        <div class="max-w-xl mx-auto mb-8 p-4 rounded-xl border border-white/10 dark:border-white/10 border-slate-200 bg-white/50 dark:bg-white/5 backdrop-blur-md shadow-sm">
+          <div class="flex justify-between items-center text-xs font-mono mb-2">
+            <span id="doc-progress-label" class="text-emerald-500 dark:text-emerald-400 font-semibold">0 of 6 documents verified (0%)</span>
+            <span id="doc-progress-badge" class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 border border-emerald-500/20 font-bold">0/6 Ready</span>
+          </div>
+          <div class="w-full bg-slate-200 dark:bg-white/10 rounded-full h-2.5 overflow-hidden">
+            <div id="doc-progress-bar" class="bg-gradient-to-r from-emerald-500 to-sky-400 h-2.5 rounded-full transition-all duration-500" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <div class="doc-checklist">
+          <div class="doc-item" onclick="this.classList.toggle('checked');">
+            <div class="doc-checkbox">✓</div>
+            <div>
+              <div class="doc-title" style="font-weight: 700; font-size: 14px; margin-bottom: 4px;">Student Birth Certificate</div>
+              <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin: 0;">Issued by Municipal Corporation or Passport copy for date of birth verification.</p>
+            </div>
+          </div>
+
+          <div class="doc-item" onclick="this.classList.toggle('checked');">
+            <div class="doc-checkbox">✓</div>
+            <div>
+              <div class="doc-title" style="font-weight: 700; font-size: 14px; margin-bottom: 4px;">Prior Academic Report Cards</div>
+              <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin: 0;">Attested mark sheets for the previous two academic years (Grade 2 onwards).</p>
+            </div>
+          </div>
+
+          <div class="doc-item" onclick="this.classList.toggle('checked');">
+            <div class="doc-checkbox">✓</div>
+            <div>
+              <div class="doc-title" style="font-weight: 700; font-size: 14px; margin-bottom: 4px;">Transfer Certificate (TC)</div>
+              <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin: 0;">Original TC counter-signed by the Education Officer / Board authority.</p>
+            </div>
+          </div>
+
+          <div class="doc-item" onclick="this.classList.toggle('checked');">
+            <div class="doc-checkbox">✓</div>
+            <div>
+              <div class="doc-title" style="font-weight: 700; font-size: 14px; margin-bottom: 4px;">Passport Sized Photographs</div>
+              <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin: 0;">4 recent color photos of the student and 2 of each parent/guardian.</p>
+            </div>
+          </div>
+
+          <div class="doc-item" onclick="this.classList.toggle('checked');">
+            <div class="doc-checkbox">✓</div>
+            <div>
+              <div class="doc-title" style="font-weight: 700; font-size: 14px; margin-bottom: 4px;">Proof of Residential Address</div>
+              <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin: 0;">Aadhaar Card, Passport, registered lease deed, or recent utility bill.</p>
+            </div>
+          </div>
+
+          <div class="doc-item" onclick="this.classList.toggle('checked');">
+            <div class="doc-checkbox">✓</div>
+            <div>
+              <div class="doc-title" style="font-weight: 700; font-size: 14px; margin-bottom: 4px;">Medical & Immunization Record</div>
+              <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin: 0;">Pediatric vaccination chart and declaration of allergies or chronic needs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tuition & Fee Calculator -->
+    <section id="tuition-calculator" class="section">
+      <div class="container" style="max-width: 900px; margin-left: auto; margin-right: auto;">
+        <div class="section-header" style="text-align: center; max-width: 680px; margin-left: auto; margin-right: auto; margin-bottom: 32px;">
+          <span class="section-eyebrow">TRANSPARENT ESTIMATOR</span>
+          <h2 class="section-title">Interactive Tuition & Fee Calculator</h2>
+          <p class="section-desc">Simulate estimated annual and quarterly educational investments based on your child's grade and transport needs.</p>
+        </div>
+
+        <div class="tool-box tool-box-wide" style="max-width: 900px; margin-left: auto; margin-right: auto;">
+          <div class="calc-grid">
+            <!-- Controls Column -->
+            <div>
+              <div class="form-group">
+                <label for="calc-grade" class="form-label">Select Grade Stage</label>
+                <select id="calc-grade" class="form-select">
+                  <option value="145000">Foundational Stage (Nursery – KG) — ₹1,45,000/yr</option>
+                  <option value="175000" selected>Primary Stage (Grades 1 – 5) — ₹1,75,000/yr</option>
+                  <option value="195000">Middle Years (Grades 6 – 8) — ₹1,95,000/yr</option>
+                  <option value="215000">Secondary Stage (Grades 9 – 10) — ₹2,15,000/yr</option>
+                  <option value="235000">Senior Secondary Honors (Grades 11 – 12) — ₹2,35,000/yr</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="calc-transport" class="form-label">Bus Transportation Zone</label>
+                <select id="calc-transport" class="form-select">
+                  <option value="0">No School Bus (Self Pick-up)</option>
+                  <option value="32000" selected>Zone 1 (Sectors 14, 15, 29, 31) — ₹32,000/yr</option>
+                  <option value="42000">Zone 2 (DLF Cyber City, Golf Course) — ₹42,000/yr</option>
+                  <option value="48000">Zone 3 (Sushant Lok, Sohna Road) — ₹48,000/yr</option>
+                </select>
+              </div>
+
+              <div class="form-group" style="display: flex; gap: 20px; margin-top: 10px;">
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer;">
+                  <input type="checkbox" id="calc-meal" checked>
+                  <span>Organic Dining / Meal Plan (+₹36k)</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer;">
+                  <input type="checkbox" id="calc-sibling">
+                  <span>Sibling Concession (10% Off)</span>
+                </label>
+              </div>
+
+              <div class="form-group" style="margin-top: 15px;">
+                <label for="calc-scholarship" class="form-label">Academic Merit Scholarship</label>
+                <select id="calc-scholarship" class="form-select">
+                  <option value="0">Standard Tuition (No Scholarship)</option>
+                  <option value="0.10">Bronze Merit Tier (10% Deduction)</option>
+                  <option value="0.20">Silver Excellence Tier (20% Deduction)</option>
+                  <option value="0.25">Gold Presidential Scholarship (25% Deduction)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Receipt Breakdown Column -->
+            <div>
+              <div class="receipt-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
+                  <h4 style="font-size: 13px; font-weight: 800; text-transform: uppercase; font-family: var(--font-mono);">
+                    Investment Summary
+                  </h4>
+                  <div class="currency-switcher">
+                    <button type="button" class="currency-btn active" data-currency="INR">₹ INR</button>
+                    <button type="button" class="currency-btn" data-currency="USD">$ USD</button>
+                    <button type="button" class="currency-btn" data-currency="AED">AED</button>
+                    <button type="button" class="currency-btn" data-currency="GBP">£ GBP</button>
+                  </div>
+                </div>
+
+                <div class="receipt-row">
+                  <span style="color: var(--text-secondary);">Base Tuition:</span>
+                  <span id="out-tuition" style="font-weight: 700;">₹1,75,000</span>
+                </div>
+                <div class="receipt-row">
+                  <span style="color: var(--text-secondary);">Transport Corridor:</span>
+                  <span id="out-transport" style="font-weight: 700;">₹32,000</span>
+                </div>
+                <div class="receipt-row">
+                  <span style="color: var(--text-secondary);">Dining & Nutrition:</span>
+                  <span id="out-meal" style="font-weight: 700;">₹36,000</span>
+                </div>
+                <div class="receipt-row">
+                  <span style="color: var(--text-secondary);">Applied Concessions:</span>
+                  <span id="out-deduction" style="font-weight: 700; color: var(--accent-emerald);">-₹0</span>
+                </div>
+
+                <!-- Visual Ratio Breakdown Bar -->
+                <div class="fee-ratio-container">
+                  <div style="display: flex; justify-content: space-between; font-size: 10px; margin-bottom: 6px; font-family: var(--font-mono);">
+                    <span style="color: var(--text-muted);">COMPONENT RATIO</span>
+                    <span style="color: var(--text-secondary);">Tuition / Transit / Dining</span>
+                  </div>
+                  <div class="fee-ratio-bar">
+                    <div id="seg-tuition" class="ratio-seg ratio-tuition" style="width: 72%;" title="Base Tuition"></div>
+                    <div id="seg-transport" class="ratio-seg ratio-transport" style="width: 13%;" title="Transportation"></div>
+                    <div id="seg-dining" class="ratio-seg ratio-dining" style="width: 15%;" title="Dining & Nutrition"></div>
+                  </div>
+                  <div class="ratio-legend">
+                    <div class="ratio-item"><span class="ratio-dot ratio-tuition"></span><span>Tuition</span></div>
+                    <div class="ratio-item"><span class="ratio-dot ratio-transport"></span><span>Transit</span></div>
+                    <div class="ratio-item"><span class="ratio-dot ratio-dining"></span><span>Dining</span></div>
+                  </div>
+                </div>
+
+                <div style="padding-top: 14px; margin-top: 8px; border-top: 1px solid var(--border-color);">
+                  <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                    <span style="font-size: 12px; color: var(--text-secondary); text-transform: uppercase;">Net Annual Total:</span>
+                    <span id="out-total" class="receipt-total">₹2,43,000</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                    <span style="font-size: 11px; color: var(--text-muted);">Quarterly Slab (x4):</span>
+                    <span id="out-quarterly" style="font-family: var(--font-mono); font-size: 14px; color: var(--text-primary);">₹60,750</span>
+                  </div>
+                </div>
+
+                <div class="responsive-two-col-tight" style="margin-top: 18px;">
+                  <button type="button" class="btn btn-outline" style="font-size: 11px; padding: 10px 10px;" onclick="addShortlistItem('Tuition Calculation Estimate', 'Admissions');">
+                    Save Estimate <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-left: 3px;"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+                  </button>
+                  <button type="button" id="calc-export-btn" class="btn btn-glass" style="font-size: 11px; padding: 10px 10px;">
+                    Export Slip (.txt) ↓
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Application Status Tracker -->
+    <section id="tracker" class="section">
+      <div class="container container-narrow" style="max-width: 760px; margin-left: auto; margin-right: auto;">
+        <div class="section-header" style="text-align: center; max-width: 640px; margin-left: auto; margin-right: auto; margin-bottom: 32px;">
+          <span class="section-eyebrow">SELF-SERVICE TRACKER</span>
+          <h2 class="section-title">Track Application Reference Status</h2>
+          <p class="section-desc">Enter your reference code to view live milestone progression, scheduled interview slots, and downloadable confirmation slips.</p>
+
+          <div style="display: flex; gap: 8px; justify-content: center; margin-top: 16px; flex-wrap: wrap;">
+            <span style="font-size: 11px; color: var(--text-muted);">Try Sample IDs:</span>
+            <button type="button" class="font-btn tracker-sample-btn" data-id="EAK-2027-8492">EAK-2027-8492 (Approved)</button>
+            <button type="button" class="font-btn tracker-sample-btn" data-id="EAK-2027-1048">EAK-2027-1048 (Interview)</button>
+            <button type="button" class="font-btn tracker-sample-btn" data-id="EAK-2027-3104">EAK-2027-3104 (Docs)</button>
+          </div>
+        </div>
+
+        <div class="tool-box container-narrow" style="max-width: 760px; margin-left: auto; margin-right: auto;">
+          <form id="tracker-form" style="display: flex; gap: 10px; margin-bottom: 24px;">
+            <input type="text" id="tracker-input" class="form-input" value="EAK-2027-8492" placeholder="e.g. EAK-2027-8492" style="font-family: var(--font-mono); text-transform: uppercase;">
+            <button type="submit" class="btn btn-solid">Check Status</button>
+          </form>
+
+          <div style="background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+              <div>
+                <span id="track-id" style="font-family: var(--font-mono); font-size: 13px; font-weight: 800; color: var(--accent-sky);">EAK-2027-8492</span>
+                <h3 id="track-name" style="font-size: 18px; font-weight: 800; margin-top: 4px;">Aarav Sharma</h3>
+                <span id="track-grade" style="font-size: 12px; color: var(--text-secondary);">Grade IX (Cambridge IGCSE)</span>
+              </div>
+              <span id="track-status" style="padding: 4px 10px; border-radius: var(--radius-full); background: var(--accent-emerald-bg); border: 1px solid rgba(16,185,129,0.3); font-size: 11px; font-weight: 700; color: var(--accent-emerald);">
+                Provisional Offer Letter Issued
+              </span>
+            </div>
+
+            <!-- Stepper Indicators -->
+            <div class="stepper" style="margin: 16px 0;">
+              <div id="track-step-1" class="step-item completed">1. Submitted</div>
+              <div id="track-step-2" class="step-item completed">2. Verification</div>
+              <div id="track-step-3" class="step-item completed">3. Interaction</div>
+              <div id="track-step-4" class="step-item active">4. Offer Letter</div>
+              <div id="track-step-5" class="step-item">5. Enrollment</div>
+            </div>
+
+            <!-- Action Alert -->
+            <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: var(--radius-md); padding: 14px; margin: 16px 0; font-size: 12px; color: var(--accent-amber);">
+              <strong>Next Action Required: </strong><span id="track-alert">Confirm enrollment and submit advance deposit by Oct 25, 2026.</span>
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-top: 18px;">
+              <button type="button" id="track-download-btn" class="btn btn-glass btn-sm">Download Slip (.txt) ↓</button>
+              <button type="button" class="btn btn-outline btn-sm" onclick="addShortlistItem('Application Slip: ' + document.getElementById('track-id').textContent, 'Application');">Bookmark Application <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-left: 4px;"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frequently Asked Questions (FAQs) (Brief Requirement) -->
+    <section class="section">
+      <div class="container container-narrow" style="max-width: 760px; margin-left: auto; margin-right: auto;">
+        <div class="section-header" style="text-align: center; max-width: 620px; margin-left: auto; margin-right: auto; margin-bottom: 32px;">
+          <span class="section-eyebrow">COMMON QUERIES</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-desc">Quick answers to common questions regarding admissions, curriculum choices, and student life.</p>
+        </div>
+
+        <div class="faq-accordion">
+          <details class="faq-item" open>
+            <summary class="faq-question">What curriculum options are offered at EAK International School?</summary>
+            <div class="faq-answer">
+              EAK International School provides a dual integrated continuum combining CBSE and Cambridge Assessment International Education. In Primary and Middle school, students receive experiential inquiry-led learning, while in Grades 9–12 they can choose between CBSE Board Examinations and Cambridge IGCSE / A-Levels.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What is the teacher-to-student ratio in classrooms?</summary>
+            <div class="faq-answer">
+              We maintain an average ratio of 1:12 across all grades. Class cohorts are strictly capped at 24 students per section to ensure individual attention, regular diagnostic feedback, and strong teacher-parent relationships.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Does the school provide bus transportation and GPS tracking?</summary>
+            <div class="faq-answer">
+              Yes, our air-conditioned bus fleet covers five major corridors across Delhi NCR. 100% of buses feature speed governors, CCTV cameras, female attendants, and real-time RFID tap cards so parents can track student entry and exit.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">How are mid-term transfers and relocations accommodated?</summary>
+            <div class="faq-answer">
+              Mid-term admissions are considered subject to seat vacancies in the respective grade. Parents should submit the student's previous school report cards and a valid Transfer Certificate (TC) signed by the competent educational authority.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Are merit or sibling scholarships available?</summary>
+            <div class="faq-answer">
+              Yes, EAK offers up to 25% merit scholarships for students demonstrating exceptional academic aptitude in diagnostic assessments or state/national level sports distinction. A 10% sibling concession is also applicable on base tuition for the younger sibling.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What sports and co-curricular facilities are available on campus?</summary>
+            <div class="faq-answer">
+              Students have daily access to an all-weather 50m heated semi-Olympic swimming pool, FIFA-standard football turf, basketball and badminton courts, the Turing Robotics & AI Lab, and our 1,200-seat amphitheatre.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Digital Inquiry Form -->
+    <section id="inquiry" class="section">
+      <div class="container container-narrow" style="max-width: 760px; margin-left: auto; margin-right: auto;">
+        <div class="section-header" style="text-align: center; max-width: 620px; margin-left: auto; margin-right: auto; margin-bottom: 32px;">
+          <span class="section-eyebrow">ONLINE REGISTRATION</span>
+          <h2 class="section-title">Submit Admission Inquiry Form</h2>
+          <p class="section-desc">Fill in the prototype form below. Our admissions coordinator will follow up within 24 hours.</p>
+        </div>
+
+        <form data-simulate class="tool-box" style="max-width: 760px; margin-left: auto; margin-right: auto;">
+          <div class="responsive-two-col-tight">
+            <div class="form-group">
+              <label class="form-label">Parent / Guardian Full Name *</label>
+              <input type="text" class="form-input" required placeholder="e.g. Vikram Mehra">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Contact Email Address *</label>
+              <input type="email" class="form-input" required placeholder="vikram@example.com">
+            </div>
+          </div>
+
+          <div class="responsive-two-col-tight">
+            <div class="form-group">
+              <label class="form-label">Phone Number *</label>
+              <input type="tel" class="form-input" required placeholder="+91 98765 43210">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Student Name *</label>
+              <input type="text" class="form-input" required placeholder="e.g. Riya Mehra">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Grade of Interest</label>
+            <select class="form-select">
+              <option>Nursery / Pre-Primary (Foundational)</option>
+              <option>Grade 1 – 5 (Primary)</option>
+              <option>Grade 6 – 8 (Middle School)</option>
+              <option>Grade 9 – 10 (Secondary Cambridge/CBSE)</option>
+              <option>Grade 11 – 12 (Senior Secondary Honors)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Message / Special Learning Needs</label>
+            <textarea class="form-textarea" rows="3" placeholder="Tell us about your child's interests or prior curriculum..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-solid btn-lg" style="width: 100%;">Submit Inquiry Prototype →</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding: 0;">
+        <div>© 2026 EAK International School. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating AI Assistant Launcher -->
+  <div class="floating-pill">
+    <button type="button" id="ai-launcher-btn" class="btn btn-solid" style="gap: 10px;">
+      <span class="pulse-dot"></span>
+      <span>Ask EAK AI</span>
+    </button>
+  </div>
+
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Drawers & Modals -->
+  <div id="ai-drawer" class="side-drawer">
+    <div class="drawer-header">
+      <h3 style="font-size: 16px; font-weight: 800;">EAK Campus Concierge</h3>
+      <button type="button" id="ai-close-btn" class="drawer-close-btn" aria-label="Close Campus Concierge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="ai-chat-messages" class="drawer-body"></div>
+    <div class="drawer-footer">
+      <form id="ai-chat-form" style="display: flex; gap: 8px;">
+        <input type="text" id="ai-chat-input" class="form-input" placeholder="Ask anything about fees or admissions..." style="flex: 1;">
+        <button type="submit" class="btn btn-solid">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="shortlist-drawer" class="side-drawer">
+    <div class="drawer-header">
+      <h3 style="font-size: 16px; font-weight: 800;">My Admissions Shortlist</h3>
+      <button type="button" id="shortlist-close-btn" class="drawer-close-btn" aria-label="Close Admissions Shortlist">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="shortlist-items-container" class="drawer-body"></div>
+    <div class="drawer-footer">
+      <button type="button" id="shortlist-print-btn" class="btn btn-outline" style="width: 100%;">Print Shortlist</button>
+    </div>
+  </div>
+
+  <div id="search-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <h3 style="font-size: 16px; font-weight: 800;">Search Site (Ctrl + K)</h3>
+        <button type="button" id="search-close-btn" class="drawer-close-btn" aria-label="Close Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <input type="text" id="search-input" class="form-input" placeholder="Type to search...">
+      <div id="search-results" style="margin-top: 14px;"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
