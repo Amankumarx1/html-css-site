@@ -606,7 +606,7 @@ function initFeeCalculator() {
     if (outTuition) outTuition.textContent = formatMoney(baseTuition);
     if (outTransport) outTransport.textContent = transportFee === 0 ? 'None' : formatMoney(transportFee);
     if (outMeal) outMeal.textContent = mealFee === 0 ? 'Opted Out' : formatMoney(mealFee);
-    if (outDeduction) outDeduction.textContent = deduction === 0 ? '-₹0' : `-${formatMoney(Math.round(deduction))}`;
+    if (outDeduction) outDeduction.textContent = deduction === 0 ? `-${formatMoney(0)}` : `-${formatMoney(Math.round(deduction))}`;
     if (outTotal) outTotal.textContent = formatMoney(netAnnual);
     if (outQuarterly) outQuarterly.textContent = formatMoney(quarterly);
 
@@ -846,7 +846,11 @@ function initPanoramaTour() {
       if (scene) {
         if (titleEl) titleEl.textContent = scene.title;
         strip.style.background = scene.bg;
-        sceneBtns.forEach(b => b.classList.remove('btn-solid'));
+        sceneBtns.forEach(b => {
+          b.classList.remove('btn-solid');
+          b.classList.add('btn-outline');
+        });
+        btn.classList.remove('btn-outline');
         btn.classList.add('btn-solid');
       }
     });
@@ -902,7 +906,11 @@ function initTransitFinder() {
             </div>
           `).join('');
         }
-        routeBtns.forEach(b => b.classList.remove('btn-solid'));
+        routeBtns.forEach(b => {
+          b.classList.remove('btn-solid');
+          b.classList.add('btn-outline');
+        });
+        btn.classList.remove('btn-outline');
         btn.classList.add('btn-solid');
       }
     });
@@ -946,7 +954,11 @@ function initStreamExplorer() {
       if (s) {
         streamTitle.textContent = s.name;
         if (streamSubjects) streamSubjects.textContent = s.subjects;
-        streamBtns.forEach(b => b.classList.remove('btn-solid'));
+        streamBtns.forEach(b => {
+          b.classList.remove('btn-solid');
+          b.classList.add('btn-outline');
+        });
+        btn.classList.remove('btn-outline');
         btn.classList.add('btn-solid');
       }
     });
@@ -1375,7 +1387,11 @@ function initDocChecklist() {
     item.setAttribute('role', 'checkbox');
     item.setAttribute('aria-checked', item.classList.contains('checked'));
 
-    item.addEventListener('click', () => {
+    item.addEventListener('click', (e) => {
+      // Toggle class if not already handled by inline attribute
+      if (!item.hasAttribute('onclick')) {
+        item.classList.toggle('checked');
+      }
       item.setAttribute('aria-checked', item.classList.contains('checked'));
       updateProgress();
     });
@@ -1649,6 +1665,15 @@ function initPageMotionBlur() {
     // Anchor links on the current page: keep smooth in-page scroll
     if (url.pathname === window.location.pathname && url.search === window.location.search && url.hash) return;
     if (url.href === window.location.href) return;
+
+    // If clicking link pointing to current active page, scroll to top smoothly without exit fade
+    const curNormPath = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+    const targetNormPath = url.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+    if (curNormPath === targetNormPath && url.search === window.location.search && !url.hash) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
 
     // Trigger smooth fade out
     e.preventDefault();
